@@ -4,16 +4,19 @@ import { AuthRoute } from '../util/route_util';
 import GreetingContainer from './greeting_container';
 import LoginFormContainer from "./login_form_container";
 import SignupFormContainer from "./signup_form_container";
+import Modal from "./modal";
+import {Link} from "react-router-dom";
+
 
 const App = () => (
     <div>
+        <Modal />
         <header>
-            <h1>SoundClone</h1>
+            <Link to="/" className="header-link">
+                <h1>SoundClone</h1>
+            </Link>
             <GreetingContainer />
         </header>
-
-        <AuthRoute path="/login" component={LoginFormContainer} />
-        <AuthRoute path="/signup" component={SignupFormContainer} />
     </div>
 );
 
