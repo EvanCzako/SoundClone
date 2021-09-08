@@ -15,10 +15,10 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  def show
-    @user = User.where(email: params[:id])
-    # @user = User.last
-    render @user
+  def get_by_email
+    @user = User.where(email: params[:email])
+    render json: @user
+    # render 'api/users/show'
   end
 
   private

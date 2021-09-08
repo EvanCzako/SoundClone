@@ -20,8 +20,8 @@ export const fetchUsers = () => (dispatch) => {
     );
 };
 
-export const fetchUser = (email) => (dispatch) => {
-    return UsersAPIUtil.fetchUser(email)
+export const fetchUserByEmail = (email) => (dispatch) => {
+    return UsersAPIUtil.fetchUserByEmail(email)
         .then((user) => dispatch(receiveUser(user))
     );
 };
