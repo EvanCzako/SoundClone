@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   
   namespace :api, defaults: { format: :json } do 
     resources :users, only: [:index, :show, :create], constraints: { id: /.*/ }
+    get '/users/get_by_email/', to: 'users#get_by_email', as: 'get_by_email'
     resource :session, only: [:new, :create, :destroy]
   end
 
