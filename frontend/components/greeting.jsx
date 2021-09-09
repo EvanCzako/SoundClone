@@ -14,9 +14,8 @@ class Greeting extends React.Component {
     render(){
         const sessionLinks = () => (
             <nav className="login-signup">
-                <button onClick={() => this.props.openModal('login')}>Login</button>
-                <br />
-                <button onClick={() => this.props.openModal('signup')}>Signup</button>
+                <button id="login-button" onClick={() => this.props.openModal('email')}>Sign in</button>
+                <button id="signup-button" onClick={() => this.props.openModal('email')}>Create account</button>
             </nav>
         );
 
@@ -34,8 +33,6 @@ class Greeting extends React.Component {
             );
         }
     }
-
-
 }
 
 export default Greeting;

@@ -10,8 +10,7 @@ const mSTP = (state) => ({
 });
 
 const mDTP = (dispatch) => ({
-    processForm: user => dispatch(signup(user)),
-    closeModal: () => dispatch(closeModal())
+    processForm: user => dispatch(signup(user))
 });
 
 export default connect(mSTP, mDTP)(SessionForm);

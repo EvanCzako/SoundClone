@@ -5,9 +5,9 @@ export const fetchUsers = () => (
     })
 );
 
-export const fetchUser = (email) => (
+export const fetchUserByEmail = (email) => (
     $.ajax({
-        url: `/api/users/${email}`,
+        url: `/api/users/get_by_email?email=${email}`,
         method: 'GET'
     })
 );

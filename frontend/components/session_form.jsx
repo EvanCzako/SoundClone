@@ -6,7 +6,7 @@ class SessionForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: "",
+            email: this.props.email,
             password: "",
             username: ""
         };
@@ -15,6 +15,7 @@ class SessionForm extends React.Component {
     }
 
     handleSubmit(e) {
+        // console.log(this.state);
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
@@ -39,17 +40,15 @@ class SessionForm extends React.Component {
         let form = null;
 
         if (this.props.formType === "login") {
-            form = <form onSubmit={this.handleSubmit}>
-                <input type="text" value={this.state.email} onChange={this.updateField('email')} placeholder="Email"/>
-                <input type="text" value={this.state.password} onChange={this.updateField('password')} placeholder="Password"/>
-                <input type="submit" value="SIGN IN" />
+            form = <form id="login-form" onSubmit={this.handleSubmit}>
+                <input id="login-password-field" type="text" value={this.state.password} onChange={this.updateField('password')} placeholder="Password"/>
+                <input id="login-account-button" type="submit" value="SIGN IN" />
             </form>
         } else if (this.props.formType === "signup") {
-            form = <form onSubmit={this.handleSubmit}>
-                <input type="text" value={this.state.username} onChange={this.updateField('username')} placeholder="Username"/>
-                <input type="text" value={this.state.email} onChange={this.updateField('email')} placeholder="Email"/>
-                <input type="text" value={this.state.password} onChange={this.updateField('password')} placeholder="Password"/>
-                <input type="submit" value="SIGN UP"/>
+            form = <form id="signup-form" onSubmit={this.handleSubmit}>
+                <input id="signup-username-field" type="text" value={this.state.username} onChange={this.updateField('username')} placeholder="Username"/>
+                <input id="signup-password-field" type="text" value={this.state.password} onChange={this.updateField('password')} placeholder="Password"/>
+                <input id="signup-account-button" type="submit" value="SIGN UP"/>
             </form>
         }
 

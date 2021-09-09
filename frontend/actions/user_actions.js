@@ -13,15 +13,14 @@ const receiveUser = (user) => ({
     user: user
 });
 
-
 export const fetchUsers = () => (dispatch) => {
     return UsersAPIUtil.fetchUsers()
         .then((users) => dispatch(receiveAllUsers(users))
     );
 };
 
-export const fetchUser = (email) => (dispatch) => {
-    return UsersAPIUtil.fetchUser(email)
+export const fetchUserByEmail = (email) => (dispatch) => {
+    return UsersAPIUtil.fetchUserByEmail(email)
         .then((user) => dispatch(receiveUser(user))
     );
 };

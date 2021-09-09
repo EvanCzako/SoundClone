@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import Root from "./components/root";
 import configureStore from './store/store';
 import { signup, loginUser, logoutUser } from './actions/session_actions';
-import { fetchUsers, fetchUser } from './actions/user_actions';
+import { fetchUsers } from './actions/user_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.logoutUser = logoutUser;
     window.signup = signup;
     window.fetchUsers = fetchUsers;
-    window.fetchUser = fetchUser;
 
     const root = document.getElementById("root");
     ReactDOM.render(<Root store={store} />, root);

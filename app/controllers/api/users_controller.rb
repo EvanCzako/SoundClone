@@ -15,10 +15,14 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  def show
-    @user = User.where(email: params[:id])
-    # @user = User.last
-    render @user
+  def get_by_email
+    @user = User.where(email: params[:email])
+    if @user
+      render json: @user
+    else
+      render json: ["Email doesn't exist"], status: 420
+    # render 'api/users/show'
+    end
   end
 
   private
