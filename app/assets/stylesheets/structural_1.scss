@@ -1,0 +1,79 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+#root div header {
+    display: flex;
+    height: 46px;
+    background-color: rgb(61, 61, 61);
+    align-items: center;
+}
+
+a h1 {
+    color: rgb(224, 224, 224);
+    padding-right: 20px;
+    padding-left: 20px;
+    border-right: 1px solid black;
+    height: 46px;
+    display: flex;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+a h1:hover {
+    color: white;
+}
+
+#signup-button {
+    background-color: rgb(255, 87, 0);
+    color: white;
+    border: none;
+    height: 27px;
+    width: 130px;
+    border-radius: 3px;
+    margin: 10px;
+    cursor:pointer;
+    font-size: 15px;
+}
+
+#login-button {
+    background-color: rgb(61, 61, 61);
+    color: white;
+    // border: none;
+    height: 27px;
+    width: 70px;
+    border-radius: 3px;
+    box-shadow: none;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(114, 114, 114);
+    margin: 10px;
+    font-size: 15px;
+}
+
+#login-button:hover {
+    border-color:rgb(156, 156, 156);
+    cursor:pointer;
+}
+
+#search-field {
+    margin: 10px;
+    height: 28px;
+    border-radius: 3px;
+    border-style: none;
+}
+
+#search-field:focus {
+    outline: none;
+}
+
+#search-button {
+    margin: 10px;
+    height: 30px;
+}
