@@ -13,7 +13,6 @@ const receiveUser = (user) => ({
     user: user
 });
 
-
 export const fetchUsers = () => (dispatch) => {
     return UsersAPIUtil.fetchUsers()
         .then((users) => dispatch(receiveAllUsers(users))

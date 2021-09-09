@@ -2,8 +2,12 @@ Rails.application.routes.draw do
   root to: 'static_pages#root'
   
   namespace :api, defaults: { format: :json } do 
-    resources :users, only: [:index, :show, :create], constraints: { id: /.*/ }
-    get '/users/get_by_email/', to: 'users#get_by_email', as: 'get_by_email'
+    resources :users, only: [:index, :show, :create] do 
+      collection do
+        get 'get_by_email'
+      end
+    end
+    
     resource :session, only: [:new, :create, :destroy]
   end
 
