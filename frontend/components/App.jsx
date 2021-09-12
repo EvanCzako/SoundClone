@@ -1,15 +1,16 @@
 import React from "react";
-import { Route } from 'react-router-dom';
-import { AuthRoute } from '../util/route_util';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 import GreetingContainer from './greeting_container';
-import LoginFormContainer from "./login_form_container";
-import SignupFormContainer from "./signup_form_container";
 import Modal from "./modal";
 import {Link} from "react-router-dom";
 import SearchBar from "./search_bar";
+import TrackList from "./track_list";
+import UploadForm from "./upload_form";
 
 
-const App = () => (
+
+const App = (props) => (
     <div>
         <Modal />
         <header>
@@ -28,7 +29,30 @@ const App = () => (
             <SearchBar />
             <GreetingContainer />
         </header>
+        <Switch>
+            {/* <Route path="/users/:id" component={} /> */}
+            {/* <Route exact path="/tracks/:id" component={} /> */}
+            <Route exact path="/upload">
+                {!!props.state.session.id ?  <UploadForm /> : <Redirect to="/" />}
+            </Route>
+
+
+            <Route exact path="/" component={TrackList} />
+        </Switch>
+
+
     </div>
 );
 
-export default App;
+const mapStateToProps = state => {
+    return {
+        state: state
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
