@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchTracks, fetchTrack } from '../actions/track_actions';
+import { fetchTracks, fetchTrack, deleteTrack } from '../actions/track_actions';
 
 class TrackList extends React.Component {
 
@@ -15,11 +15,12 @@ class TrackList extends React.Component {
 
     render() {
 
-        // console.log(...this.props.tracks);
         let tracks = Object.values(this.props.tracks).map((track) => {
-            let button = null;
+            let editButton = null;
+            let deleteButton = null;
             if(track.uploader.id===this.props.session.id){
-                button = <Link to={`/tracks/${track.id}/edit`}>Edit Track</Link>
+                editButton = <Link to={`/tracks/${track.id}/edit`}>Edit Track</Link>
+                deleteButton = <button onClick={() => this.props.deleteTrack(track.id)}>Delete track</button>
             }
 
             return <div key={track.id}>
@@ -28,7 +29,8 @@ class TrackList extends React.Component {
                 <audio controls>
                     <source src={track.trackUrl} type="audio/wav" />
                 </audio>
-                {button}
+                {editButton}
+                {deleteButton}
                 
             </div>
 
@@ -56,6 +58,7 @@ const mapDispatchToProps = dispatch => {
     return {
         fetchTracks: () => dispatch(fetchTracks()),
         fetchTrack: (trackId) => dispatch(fetchTrack(trackId)),
+        deleteTrack: (trackId) => dispatch(deleteTrack(trackId))
     };
 };
 

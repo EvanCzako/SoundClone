@@ -29,3 +29,10 @@ export const updateTrack = (track) => (
         data: {track: track}
     })
 );
+
+export const deleteTrack = (trackId) => (
+    $.ajax({
+        url: `/api/tracks/${trackId}`,
+        method: 'DELETE'
+    })
+);

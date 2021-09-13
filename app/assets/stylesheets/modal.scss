@@ -119,3 +119,92 @@
   color: white;
   align-items: center;
 }
+
+#login-form {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 30%;
+  width: 100%;
+  bottom: 15%;
+  left: 0%;
+}
+
+#login-password-field {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  border-style: none;
+  border: 1px solid rgb(122, 122, 122);
+  border-radius: 5px;
+  height: 30%;
+  width: 75%;
+  top: 10%;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+}
+
+#login-account-button {
+  position: absolute;
+  background-color: rgb(230, 92, 0);
+  border-style: none;
+  border: none;
+  border-radius: 5px;
+  height: 30%;
+  width: 75%;
+  bottom: 10%;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
+#signup-form {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 40%;
+  width: 100%;
+  bottom: 7.5%;
+  left: 0%;
+}
+
+#signup-username-field {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  border-style: none;
+  border: 1px solid rgb(122, 122, 122);
+  border-radius: 5px;
+  height: 23%;
+  width: 75%;
+  top: 0%;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+}
+
+#signup-password-field {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  border-style: none;
+  border: 1px solid rgb(122, 122, 122);
+  border-radius: 5px;
+  height: 23%;
+  width: 75%;
+  top: 30%;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+}
+
+#signup-account-button {
+  position: absolute;
+  background-color: rgb(230, 92, 0);
+  border-style: none;
+  border: none;
+  border-radius: 5px;
+  height: 23%;
+  width: 75%;
+  bottom: 10%;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  color: white;
+}
