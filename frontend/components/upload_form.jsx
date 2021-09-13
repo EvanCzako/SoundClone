@@ -10,13 +10,15 @@ class UploadForm extends React.Component {
             {
                 title: "",
                 description: "",
-                songFile: null
+                songFile: null,
+                submitting: false,
+                message: ""
             }
         this.updateField = this.updateField.bind(this);
         this.handleFile = this.handleFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleResponse = this.handleResponse.bind(this);
     }
-
 
     updateField = (field) => {
         return (e) => {
@@ -30,49 +32,56 @@ class UploadForm extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        // console.log(this.state.songFile);
         const formData = new FormData();
         formData.append('track[title]',this.state.title);
         formData.append('track[description]', this.state.description);
         formData.append('track[song]', this.state.songFile);
-
+        this.setState({ ['submitting']: true });
         createTrack(formData)
-            .then((response) => console.log(response.message),
-                  (response) => console.log(response.responseJSON));
+            .then((response) => this.handleResponse(response.message,true),
+                (response) => this.handleResponse(response.responseJSON,false));
+        this.setState({ ['message']: 'Attempting to upload now' });
+    }
+
+    handleResponse(response,success){
+        if(success){
+            this.setState({ ['message']: 'Track successfully uploaded!' });
+        } else{
+            this.setState({ ['message']: 'Track did not upload. Please try again.' });
+        }
+        this.setState({ ['submitting']: false });
     }
 
     render() {
 
-
-        let form = <form id="upload-form" onSubmit={this.handleSubmit}>
-            <input id="title-field" type="text" value={this.state.title} onChange={this.updateField('title')} placeholder="Title" />
-            <input id="description-field" type="text" value={this.state.description} onChange={this.updateField('description')} placeholder="Description" />
-            <input id="choose-sound-file" type="file" onChange={this.handleFile} />
-            <input id="upload-track-button" type="submit" value="Upload" />
-        </form>
+        let form = null;
+        if (!this.state.submitting){
+            form = <form id="upload-form" onSubmit={this.handleSubmit}>
+                <input id="title-field" type="text" value={this.state.title} onChange={this.updateField('title')} placeholder="Title" />
+                <input id="description-field" type="text" value={this.state.description} onChange={this.updateField('description')} placeholder="Description" />
+                <input id="choose-sound-file" type="file" onChange={this.handleFile} />
+                <input id="upload-track-button" type="submit" value="Upload" />
+            </form>
+        }
 
         return (
             <div>
                 {form}
+                {this.state.message}
             </div>
         );
     }
-
 }
 
 const mapStateToProps = state => {
     return {
-        track: {
-            title: "",
-            description: "",
-            songFile: null
-        }
+
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        // createTrack: (trackData) => dispatch(createTrack(trackData))
+
     };
 };
 

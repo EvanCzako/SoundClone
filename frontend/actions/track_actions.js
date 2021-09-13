@@ -22,10 +22,3 @@ export const fetchTrack = (trackId) => (dispatch) => {
     return TracksApiUtil.fetchTrack(trackId)
         .then((track) => dispatch(receiveTrack(track)));
 };
-
-// export const createTrack = (trackData) => (dispatch) => {
-//     return TracksApiUtil.createTrack(trackData)
-//         .then((track) => dispatch(receiveTrack(track)));
-// };
-
-// export const createTrack = (track) => ()

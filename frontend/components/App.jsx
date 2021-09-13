@@ -7,37 +7,35 @@ import {Link} from "react-router-dom";
 import SearchBar from "./search_bar";
 import TrackList from "./track_list";
 import UploadForm from "./upload_form";
-
-
+import EditTrackForm from "./edit_form";
 
 const App = (props) => (
     <div>
         <Modal />
         <header>
-            <Link to="/" className="header-link">
-                <h1>SoundClone</h1>
-            </Link>
-            <Link to="/">
-                <h1>Home</h1>
-            </Link>
-            <Link to="/">
-                <h1>Stream</h1>
-            </Link>
-            <Link to="/">
-                <h1>Library</h1>
-            </Link>
+            <div id="top-nav-left-links">
+                <Link to="/" className="header-link">
+                    <h1>SoundClone</h1>
+                </Link>
+                <Link to="/">
+                    <h1>Home</h1>
+                </Link>
+                <Link to="/">
+                    <h1>Stream</h1>
+                </Link>
+                <Link to="/library">
+                    <h1>Library</h1>
+                </Link>
+            </div>
             <SearchBar />
             <GreetingContainer />
         </header>
         <Switch>
-            {/* <Route path="/users/:id" component={} /> */}
-            {/* <Route exact path="/tracks/:id" component={} /> */}
             <Route exact path="/upload">
                 {!!props.state.session.id ?  <UploadForm /> : <Redirect to="/" />}
             </Route>
-
-
-            <Route exact path="/" component={TrackList} />
+            <Route exact path="/tracks/:trackId/edit" component={EditTrackForm} />
+            <Route exact path="/library" component={TrackList} />
         </Switch>
 
 

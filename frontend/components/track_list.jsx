@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { fetchTracks, fetchTrack } from '../actions/track_actions';
 
 class TrackList extends React.Component {
@@ -16,12 +17,19 @@ class TrackList extends React.Component {
 
         // console.log(...this.props.tracks);
         let tracks = Object.values(this.props.tracks).map((track) => {
-            // return <li key={track.id}>{track.title}</li>
+            let button = null;
+            if(track.uploader.id===this.props.session.id){
+                button = <Link to={`/tracks/${track.id}/edit`}>Edit Track</Link>
+            }
+
             return <div key={track.id}>
                 <h1>{track.title}</h1>
+                <div>{track.description}</div>
                 <audio controls>
                     <source src={track.trackUrl} type="audio/wav" />
                 </audio>
+                {button}
+                
             </div>
 
         });
@@ -39,7 +47,8 @@ class TrackList extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        tracks: state.entities.tracks
+        tracks: state.entities.tracks,
+        session: state.session
     };
 };
 

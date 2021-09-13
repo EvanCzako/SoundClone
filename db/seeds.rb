@@ -15,10 +15,10 @@ u1 = User.create!(
    email: 'demouser@gmail.com',   
 )
 
-t1 =  Track.create!(
-   uploader: u1,
-   uploader_id: u1.id,
-   title: "SOUNDOFTHECITY",
-   description: "Toph and Dough at it againnnnn",
-);
-t1.song.attach(io: File.open("/Users/evanczako/Desktop/SOUNDOFTHECITY.wav"), filename: "SOUNDOFTHECITY.wav");
+# t1 =  Track.create!(
+#    uploader: u1,
+#    uploader_id: u1.id,
+#    title: "SOUNDOFTHECITY",
+#    description: "Toph and Dough at it againnnnn",
+# );
+# t1.song.attach(io: File.open("/Users/evanczako/Desktop/SOUNDOFTHECITY.wav"), filename: "SOUNDOFTHECITY.wav");

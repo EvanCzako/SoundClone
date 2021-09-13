@@ -21,3 +21,11 @@ export const createTrack = (track) => (
         processData: false
     })
 );
+
+export const updateTrack = (track) => (
+    $.ajax({
+        url: `/api/tracks/${track.id}`,
+        method: 'PATCH',
+        data: {track: track}
+    })
+);
