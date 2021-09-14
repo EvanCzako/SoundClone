@@ -63,11 +63,9 @@ class UploadForm extends React.Component {
     handleResponse(response,success){
         if(success){
             this.setState({ ['message']: 'Track successfully uploaded!' });
-            console.log(response);
         } else{
             this.setState({ ['message']: 'Track did not upload. Please try again.' });
             this.setState({ ['errorMessage']: response });
-            console.log(response);
         }
         this.setState({ ['submitting']: false });
     }
