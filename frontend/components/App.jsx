@@ -20,10 +20,10 @@ const App = (props) => (
                 <Link to="/">
                     <h1>Home</h1>
                 </Link>
-                <Link to="/">
+                <Link to="/stream">
                     <h1>Stream</h1>
                 </Link>
-                <Link to="/library">
+                <Link to="/">
                     <h1>Library</h1>
                 </Link>
             </div>
@@ -35,7 +35,7 @@ const App = (props) => (
                 {!!props.state.session.id ?  <UploadForm /> : <Redirect to="/" />}
             </Route>
             <Route exact path="/tracks/:trackId/edit" component={EditTrackForm} />
-            <Route exact path="/library" component={TrackList} />
+            <Route exact path="/stream" component={TrackList} />
         </Switch>
 
 

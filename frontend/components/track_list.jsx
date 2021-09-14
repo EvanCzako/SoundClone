@@ -19,28 +19,30 @@ class TrackList extends React.Component {
             let editButton = null;
             let deleteButton = null;
             if(track.uploader.id===this.props.session.id){
-                editButton = <Link to={`/tracks/${track.id}/edit`}>Edit Track</Link>
-                deleteButton = <button onClick={() => this.props.deleteTrack(track.id)}>Delete track</button>
+                editButton = <Link to={`/tracks/${track.id}/edit`} className="stream-edit-track-button">Edit Track</Link>
+                deleteButton = <button className="stream-delete-track-button" onClick={() => this.props.deleteTrack(track.id)}>Delete track</button>
             }
 
-            return <div key={track.id}>
-                <h1>{track.title}</h1>
-                <div>{track.description}</div>
+            return <div className="track-display" key={track.id}>
+                <Link to={`/tracks/${track.id}`}><img src={track.photoUrl} alt="Album art" /></Link>
+                <Link to={`/users/${track.uploader.id}`} className="stream-user-link">{track.uploader.username}</Link>
+                <Link to={`/tracks/${track.id}`} className="stream-track-link">{track.title}</Link>
                 <audio controls>
-                    <source src={track.trackUrl} type="audio/wav" />
+                    <source src={track.songUrl} type="audio/wav" />
                 </audio>
                 {editButton}
                 {deleteButton}
-                
             </div>
 
         });
 
         return (
-            <div id="main-tracklist">
-                <ul>TRACKS
-                    {tracks}
-                </ul>
+            <div id="tracklist-main-content">
+                <div id="main-tracklist">
+                    <ul>
+                        {tracks}
+                    </ul>
+                </div>
             </div>
         );
     }

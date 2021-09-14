@@ -11,6 +11,7 @@ class Api::TracksController < ApplicationController
   end
 
   def create
+    puts track_params
     @track = Track.new(track_params)
     @track.uploader = current_user
     @track.uploader_id = current_user.id
@@ -40,7 +41,7 @@ class Api::TracksController < ApplicationController
   private
   
   def track_params
-    params.require(:track).permit(:title, :description, :song)
+    params.require(:track).permit(:title, :description, :song, :photo)
   end
     
 end

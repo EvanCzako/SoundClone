@@ -1,0 +1,107 @@
+#tracklist-main-content {
+    position: absolute;
+    display: block;
+    left: 30px;
+    height: 100%;
+    width: 70%;
+    background-color: rgb(255, 255, 255);
+}
+
+#main-tracklist {
+    position: absolute;
+    padding: 10px;
+    height: 100%;
+    top: 46px;
+    width: 75%
+}
+
+#main-tracklist ul {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.track-display {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    height: 250px;
+    left: 30px;
+    width: 100%;
+}
+
+.track-display img {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    top: 10px;
+    left: 10px;
+}
+
+.stream-user-link {
+    position: absolute;
+    display: block;
+    height: 200px;
+    width: 200px;
+    top: 10px;
+    left: 220px;  
+    font-size: 20px;
+    color: gray;
+}
+
+.stream-user-link:hover {
+    color: black;
+}
+
+.stream-track-link {
+    position: absolute;
+    display: block;
+    height: 200px;
+    width: 200px;
+    top: 40px;
+    left: 220px;  
+    font-size: 25px;
+    color: black;
+}
+
+audio {
+    position: absolute;
+    display: block;
+    top: 80px;
+    left: 220px;  
+    width: 600px;
+}
+
+.stream-edit-track-button {
+    position: absolute;
+    display: block;
+    top: 190px;
+    left: 220px;  
+    color: black;
+    font-size: 12px;
+    width: 55px;
+}
+
+.stream-edit-track-button:hover {
+    color: gray;
+}
+
+.stream-delete-track-button {
+    position: absolute;
+    display: block;
+    top: 187px;
+    left: 280px;  
+    color: black;
+    background: none;
+    border-style: none;
+    font-size: 12px;
+    width: 75px;
+    font-family: 'Lato', sans-serif;
+}
+
+.stream-delete-track-button:hover {
+    cursor: pointer;
+    color: gray;
+}

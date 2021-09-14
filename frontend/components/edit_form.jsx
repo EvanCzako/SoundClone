@@ -65,9 +65,9 @@ class EditTrackForm extends React.Component {
         };
         let form = null;
         if (!this.state.submitting) {
-            form = <form id="upload-form" onSubmit={this.handleSubmit}>
-                <input id="title-field" type="text" value={this.state.title} onChange={this.updateField('title')} placeholder="Title" />
-                <input id="description-field" type="text" value={this.state.description} onChange={this.updateField('description')} placeholder="Description" />
+            form = <form id="edit-form" onSubmit={this.handleSubmit}>
+                <input id="edit-title-field" type="text" value={this.state.title} onChange={this.updateField('title')} placeholder="Title" />
+                <input id="edit-description-field" type="text" value={this.state.description} onChange={this.updateField('description')} placeholder="Description" />
                 <input id="edit-track-button" type="submit" value="Edit track info" />
             </form>
         }
