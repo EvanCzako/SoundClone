@@ -1,8 +1,23 @@
 body {
     font-family: 'Lato', sans-serif;
+    background-color: rgb(223, 223, 223);
 }
 
 #root div header {
+    display: flex;
+    height: 46px;
+    background-color: rgb(61, 61, 61);
+    align-items: center;
+}
+
+#top-nav-left-links {
+    display: flex;
+    height: 46px;
+    background-color: rgb(61, 61, 61);
+    align-items: center;
+}
+
+#top-nav-right-links {
     display: flex;
     height: 46px;
     background-color: rgb(61, 61, 61);
@@ -45,7 +60,6 @@ a h1:hover {
 #login-button {
     background-color: rgb(61, 61, 61);
     color: white;
-    // border: none;
     height: 27px;
     width: 70px;
     border-radius: 3px;
@@ -77,3 +91,51 @@ a h1:hover {
     margin: 10px;
     height: 30px;
 }
+
+#logout-button {
+    background-color: rgb(61, 61, 61);
+    color: white;
+    height: 27px;
+    width: 70px;
+    border-radius: 3px;
+    box-shadow: none;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(114, 114, 114);
+    margin: 10px;
+    font-size: 15px;
+}
+
+#logout-button:hover {
+    border-color:rgb(156, 156, 156);
+    cursor:pointer;
+}
+
+#upload-page-link-button {
+    color: rgb(224, 224, 224);
+    padding-right: 20px;
+    padding-left: 20px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+}
+
+#upload-page-link-button:hover {
+    color: white;
+    cursor:pointer;
+}
+
+#current-user-profile-button {
+    color: rgb(224, 224, 224);
+    padding-right: 20px;
+    padding-left: 20px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+}
+
+#current-user-profile-button:hover {
+    color: white;
+    cursor:pointer;
+}
+

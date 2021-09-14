@@ -68,7 +68,7 @@ class Modal extends React.Component {
                 <div className="modal-child" onClick={e => e.stopPropagation()}>
                     <div></div>
                     <button id="demouser-signin" onClick={this.handleDemoClick}>Sign in as demo user</button>
-                    <div>----------------or----------------</div>
+                    <div id="modal-or">---------------- or ----------------</div>
                     {component}
                     <div></div>
                 </div>

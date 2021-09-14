@@ -21,9 +21,10 @@ class Greeting extends React.Component {
 
         if (!!this.props.currentUser) {
             return (
-                <div>
-                    <p>Hey, {this.props.currentUser.username}!</p>
-                    <button onClick={this.props.logout}>Logout</button>
+                <div id="top-nav-right-links">
+                    <Link to="/upload" id="upload-page-link-button">Upload</Link>
+                    <Link to={`/users/${this.props.currentUser.id}`} id="current-user-profile-button">{this.props.currentUser.username}</Link>
+                    <button onClick={this.props.logout} id="logout-button">Sign out</button>
                 </div>
             );
         }
