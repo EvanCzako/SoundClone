@@ -76,17 +76,17 @@ class UploadForm extends React.Component {
         if (!this.state.submitting){
             form = <form id="upload-form" onSubmit={this.handleSubmit}>
                 {preview}
-                <label for="choose-sound-file" id="sound-file-upload-label">
+                <label htmlFor="choose-sound-file" id="sound-file-upload-label">
                     Choose file to upload
                 </label>
                 <input id="choose-sound-file" type="file" onChange={this.handleSongFile} />
-                <label for="choose-photo-file" id="image-file-upload-label">
+                <label htmlFor="choose-photo-file" id="image-file-upload-label">
                     Upload image
                 </label>
                 <input id="choose-photo-file" type="file" onChange={this.handlePhotoFile} />
-                <label id="title-field-label" for="title-field">Title</label>
+                <label id="title-field-label" htmlFor="title-field">Title</label>
                 <input id="title-field" type="text" value={this.state.title} onChange={this.updateField('title')} placeholder="Name your track" />
-                <label id="description-field-label" for="description-field">Description</label>
+                <label id="description-field-label" htmlFor="description-field">Description</label>
                 <input id="description-field" type="text" value={this.state.description} onChange={this.updateField('description')} placeholder="Describe your track" />
                 <input id="upload-track-button" type="submit" value="Save" />
             </form>
