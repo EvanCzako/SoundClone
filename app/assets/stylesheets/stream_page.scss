@@ -1,6 +1,6 @@
 #tracklist-main-content {
     position: absolute;
-    display: block;
+    // display: block;
     left: 30px;
     height: 100%;
     width: 70%;
@@ -104,4 +104,40 @@ audio {
 .stream-delete-track-button:hover {
     cursor: pointer;
     color: gray;
+}
+
+.audio-button {
+    position: absolute;
+    display: block;
+    top: 100px;
+    left: 230px;  
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 12px;
+    font-family: 'Lato', sans-serif;
+    background-color: rgb(255, 87, 0);
+}
+
+.audio-button:hover {
+    background-color: rgb(255, 51, 0);
+    cursor: pointer;
+}
+
+.play-icon {
+    position: absolute;
+    font-size: 14px;
+    // z-index: 10;
+    left: 25px;
+    top: 23px;
+}
+
+.pause-icon {
+    position: absolute;
+    font-size: 14px;
+    // z-index: 10;
+    left: 24px;
+    top: 23px;
 }

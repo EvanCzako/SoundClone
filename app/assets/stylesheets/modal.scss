@@ -37,6 +37,10 @@
   color: white;
 }
 
+#demouser-signin:hover {
+  cursor: pointer;
+}
+
 #modal-or {
   position: absolute;
   top: 45%
@@ -78,6 +82,10 @@
   font-family: 'Lato', sans-serif;
   font-size: 20px;
   color: white;
+}
+
+#continue-button:hover {
+  cursor: pointer;
 }
 
 
@@ -158,6 +166,10 @@
   color: white;
 }
 
+#login-account-button:hover {
+  cursor: pointer;
+}
+
 #signup-form {
   position: absolute;
   display: flex;
@@ -207,4 +219,8 @@
   font-family: 'Lato', sans-serif;
   font-size: 20px;
   color: white;
+}
+
+#signup-account-button:hover {
+  cursor: pointer;
 }
