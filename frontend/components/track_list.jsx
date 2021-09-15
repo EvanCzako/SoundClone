@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchTracks, fetchTrack, deleteTrack } from '../actions/track_actions';
+import Music from './music';
 
 class TrackList extends React.Component {
 
@@ -27,9 +28,7 @@ class TrackList extends React.Component {
                 <Link to={`/tracks/${track.id}`}><img src={track.photoUrl} alt="Album art" /></Link>
                 <Link to={`/users/${track.uploader.id}`} className="stream-user-link">{track.uploader.username}</Link>
                 <Link to={`/tracks/${track.id}`} className="stream-track-link">{track.title}</Link>
-                <audio controls>
-                    <source src={track.songUrl} type="audio/wav" />
-                </audio>
+                <Music track={track}/>
                 {editButton}
                 {deleteButton}
             </div>

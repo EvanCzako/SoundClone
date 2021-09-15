@@ -8,6 +8,7 @@ import SearchBar from "./search_bar";
 import TrackList from "./track_list";
 import UploadForm from "./upload_form";
 import EditTrackForm from "./edit_form";
+import AudioBar from "./audio_bar";
 
 const App = (props) => (
     <div>
@@ -37,8 +38,7 @@ const App = (props) => (
             <Route exact path="/tracks/:trackId/edit" component={EditTrackForm} />
             <Route exact path="/stream" component={TrackList} />
         </Switch>
-
-
+        <AudioBar />
     </div>
 );
 
