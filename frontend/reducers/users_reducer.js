@@ -10,16 +10,8 @@ const usersReducer = (oldState = {}, action) => {
         case RECEIVE_ALL_USERS:
             return {...action.users};
         case RECEIVE_USER:
-            if (action.user.length>0){
-                let u = action.user[0];
-                let id = u.id;
-                nextState[id] = u;
-                return nextState;
-            } else {
-                return {}
-            }
-        // case REMOVE_ALL_USERS_FROM_STATE:
-        //     return {};
+            nextState[action.user.id] = action.user;
+            return nextState;
         default:
             return oldState;
     }

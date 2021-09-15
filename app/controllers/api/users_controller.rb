@@ -16,12 +16,21 @@ class Api::UsersController < ApplicationController
   end
 
   def get_by_email
-    @user = User.where(email: params[:email])
+    @user = User.where(email: params[:email]).first
     if @user
-      render json: @user
+      render :show
     else
-      render json: ["Email doesn't exist"], status: 420
-    # render 'api/users/show'
+      render json: ["Email not in database"]
+    end
+  end
+
+  def get_by_id
+    @user = User.where(id: params[:id]).first
+    if @user
+      render :show
+    else
+      render json: ["User id doesn't exist"], status: 420
+      # render json: ["Nope"]
     end
   end
 

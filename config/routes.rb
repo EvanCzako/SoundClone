@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show, :create] do 
       collection do
         get 'get_by_email'
+        get 'get_by_id'
       end
     end
     
