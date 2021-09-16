@@ -16,20 +16,20 @@ u1 = User.create!(
    password: '1234567',
    email: 'demouser@gmail.com',   
 )
-file = URI.open('https://s3.console.aws.amazon.com/s3/object/soundclone-seeds?region=us-east-1&prefix=demo_user_prof_pic.jpeg')
+
 file = URI.open('https://soundclone-seeds.s3.amazonaws.com/demo_user_prof_pic.jpeg');
 # file = URI.open('/Users/evanczako/Documents/App Academy/FullStack Project/Files for seeding/demo_user_prof_pic.jpeg');
 u1.profile_photo.attach(io: file, filename: "demo_user_prof_pic.jpeg");
 
-# u2 = User.create!(
-#    username: 'Doughy',
-#    password: '7654321',
-#    email: 'doughy@gmail.com',   
-# )
+u2 = User.create!(
+   username: 'Doughy',
+   password: '7654321',
+   email: 'doughy@gmail.com',   
+)
 # u2.profile_photo.attach(io: File.open("/Users/evanczako/Documents/App Academy/FullStack Project/Files for seeding/dough_boi_prof_pic.png"), filename: "dough_boi_prof_pic.png");
 # file2 = URI.open("/Users/evanczako/Documents/App Academy/FullStack Project/Files for seeding/dough_boi_prof_pic.png");
-# file2 = URI.open('https://s3.console.aws.amazon.com/s3/object/soundclone-seeds?region=us-east-1&prefix=dough_boi_prof_pic.png');
-# u2.profile_photo.attach(io: file2, filename: "dough_boi_prof_pic.png");
+file2 = URI.open('https://soundclone-seeds.s3.amazonaws.com/dough_boi_prof_pic.png');
+u2.profile_photo.attach(io: file2, filename: "dough_boi_prof_pic.png");
 
 # t1 =  Track.create!(
 #    uploader: u2,
