@@ -39,9 +39,9 @@ t1 =  Track.create!(
 );
 # t1.song.attach(io: File.open("/Users/evanczako/Documents/App Academy/FullStack Project/Files for seeding/SOUNDOFTHECITY.wav"), filename: "SOUNDOFTHECITY.wav");
 file3 = URI.open('https://soundclone-seeds.s3.amazonaws.com/SOUNDOFTHECITY.wav');
-t1.song.attach(io: file3, filename: "SOUNDOFTHECITY.wav"));
+t1.song.attach(io: file3, filename: "SOUNDOFTHECITY.wav");
 file4 = URI.open('https://soundclone-seeds.s3.amazonaws.com/SSOM_cover.png');
-t1.photo.attach(io: file4, filename: "SSOM_cover.png"));
+t1.photo.attach(io: file4, filename: "SSOM_cover.png");
 # t1.photo.attach(io: File.open("/Users/evanczako/Documents/App Academy/FullStack Project/Files for seeding/SSOM_cover.png"), filename: "SSOM_cover.png");
 
 
