@@ -40,20 +40,22 @@ class SessionForm extends React.Component {
 
         if (this.props.formType === "login") {
             form = <form id="login-form" onSubmit={this.handleSubmit}>
-                <input id="login-password-field" type="text" value={this.state.password} onChange={this.updateField('password')} placeholder="Password"/>
+                <input id="login-password-field" type="password" value={this.state.password} onChange={this.updateField('password')} placeholder="Password"/>
                 <input id="login-account-button" type="submit" value="SIGN IN" />
             </form>
         } else if (this.props.formType === "signup") {
             form = <form id="signup-form" onSubmit={this.handleSubmit}>
                 <input id="signup-username-field" type="text" value={this.state.username} onChange={this.updateField('username')} placeholder="Username"/>
-                <input id="signup-password-field" type="text" value={this.state.password} onChange={this.updateField('password')} placeholder="Password"/>
+                <input id="signup-password-field" type="password" value={this.state.password} onChange={this.updateField('password')} placeholder="Password"/>
                 <input id="signup-account-button" type="submit" value="SIGN UP"/>
             </form>
         }
 
         return(
             <div>
-                <ul>{errors}</ul>
+                <br/>
+                <br />
+                <ul id="session-errors-list">{errors}</ul>
                 <div>{form}</div>
             </div>
         );

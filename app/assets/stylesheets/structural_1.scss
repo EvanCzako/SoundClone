@@ -8,6 +8,7 @@ body {
     height: 46px;
     background-color: rgb(61, 61, 61);
     align-items: center;
+    z-index: 10;
 }
 
 #top-nav-left-links {
@@ -146,6 +147,7 @@ a h1:hover {
     width: 100%;
     height: 50px;
     border:none;
+    z-index: 11;
 }
 
 #audio-bar {

@@ -23,7 +23,7 @@ class UserTrackList extends React.Component {
     }
 
     render() {
-        console.log(this.props.pageUser);
+
         let userPageTracks = null;
 
         if(Object.values(this.props.tracks).length != 0 ){
@@ -49,7 +49,6 @@ class UserTrackList extends React.Component {
                     </div>
 
                 } else {
-                    console.log(userTrack);
                     this.props.fetchTrack(userTrack.id);
                     return null;
                 }

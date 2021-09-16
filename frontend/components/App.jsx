@@ -16,17 +16,11 @@ const App = (props) => (
         <Modal />
         <header>
             <div id="top-nav-left-links">
-                <Link to="/" className="header-link">
+                <Link to="/stream">
                     <h1>SoundClone</h1>
-                </Link>
-                <Link to="/">
-                    <h1>Home</h1>
                 </Link>
                 <Link to="/stream">
                     <h1>Stream</h1>
-                </Link>
-                <Link to="/">
-                    <h1>Library</h1>
                 </Link>
             </div>
             <SearchBar />

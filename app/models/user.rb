@@ -11,6 +11,8 @@ class User < ApplicationRecord
         foreign_key: :uploader_id,
         class_name: :Track
 
+    has_one_attached :profile_photo
+
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         if user && user.is_password?(password)

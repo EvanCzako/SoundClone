@@ -15,6 +15,16 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = User.find(params[:id]);
+    puts(user_params);
+    if @user.update(user_params)
+      render 'api/users/show'
+    else
+      render json: @user.errors.full_messages, status: 401
+    end
+  end
+
   def get_by_email
     @user = User.where(email: params[:email]).first
     if @user
@@ -38,7 +48,7 @@ class Api::UsersController < ApplicationController
   private
   
   def user_params
-    params.require(:user).permit(:password, :email, :username)
+    params.require(:user).permit(:password, :email, :username, :profile_photo)
   end
     
 end
