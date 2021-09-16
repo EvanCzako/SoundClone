@@ -6,10 +6,12 @@ class User < ApplicationRecord
     attr_reader :password
     after_initialize :ensure_session_token
 
-    has_many :tracks,
+    has_many :uploaded_tracks,
         primary_key: :id,
         foreign_key: :uploader_id,
         class_name: :Track
+
+    has_one_attached :profile_photo
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)

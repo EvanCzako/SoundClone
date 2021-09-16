@@ -16,7 +16,7 @@ class UploadForm extends React.Component {
                 submitting: false,
                 message: "",
                 errorMessage: ""
-            }
+            };
         this.updateField = this.updateField.bind(this);
         this.handleSongFile = this.handleSongFile.bind(this);
         this.handlePhotoFile = this.handlePhotoFile.bind(this);

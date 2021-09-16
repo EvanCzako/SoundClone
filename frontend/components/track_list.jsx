@@ -24,19 +24,21 @@ class TrackList extends React.Component {
                 deleteButton = <button className="stream-delete-track-button" onClick={() => this.props.deleteTrack(track.id)}>Delete track</button>
             }
 
-            return <div className="track-display" key={track.id}>
+            return <li className="track-display" key={track.id}>
                 <Link to={`/tracks/${track.id}`}><img src={track.photoUrl} alt="Album art" /></Link>
                 <Link to={`/users/${track.uploader.id}`} className="stream-user-link">{track.uploader.username}</Link>
                 <Link to={`/tracks/${track.id}`} className="stream-track-link">{track.title}</Link>
                 <Music track={track}/>
                 {editButton}
                 {deleteButton}
-            </div>
+            </li>
 
         });
 
         return (
             <div id="tracklist-main-content">
+                <h1>Hear the latest posts from the SoundClone community:</h1>
+                <div id="stream-white-background"></div>
                 <div id="main-tracklist">
                     <ul>
                         {tracks}

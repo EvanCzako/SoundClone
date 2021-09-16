@@ -1,10 +1,32 @@
+#stream-white-background {
+    position: fixed;
+    display: block;
+    top: -46px;
+    left: 30px;
+    width: 100px;
+    width: 70%;
+    height: 100%;
+    background-color: white;
+    z-index: -1;
+}
+
 #tracklist-main-content {
     position: absolute;
-    // display: block;
+    display: block;
     left: 30px;
+    height: 1000px;
+    width: 70%;
+}
+
+#tracklist-main-content h1 {
+    position: absolute;
+    left: 30px;
+    top: 40px;
     height: 100%;
     width: 70%;
-    background-color: rgb(255, 255, 255);
+    color: rgb(131, 131, 131);
+    font-size: 20px;
+    z-index: 1;
 }
 
 #main-tracklist {
@@ -17,9 +39,7 @@
 
 #main-tracklist ul {
     position: absolute;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+    top: 50px;
 }
 
 .track-display {
@@ -27,9 +47,10 @@
     display: flex;
     flex-direction: column;
     padding: 10px;
-    height: 250px;
     left: 30px;
-    width: 100%;
+    width: 500px;
+    height: 250px;
+    z-index: 1;
 }
 
 .track-display img {
@@ -43,8 +64,7 @@
 .stream-user-link {
     position: absolute;
     display: block;
-    height: 200px;
-    width: 200px;
+    width: 500px;
     top: 10px;
     left: 220px;  
     font-size: 20px;
@@ -58,20 +78,11 @@
 .stream-track-link {
     position: absolute;
     display: block;
-    height: 200px;
-    width: 200px;
+    width: 500px;
     top: 40px;
     left: 220px;  
     font-size: 25px;
     color: black;
-}
-
-audio {
-    position: absolute;
-    display: block;
-    top: 80px;
-    left: 220px;  
-    width: 600px;
 }
 
 .stream-edit-track-button {
@@ -129,7 +140,6 @@ audio {
 .play-icon {
     position: absolute;
     font-size: 14px;
-    // z-index: 10;
     left: 25px;
     top: 23px;
 }
@@ -137,7 +147,6 @@ audio {
 .pause-icon {
     position: absolute;
     font-size: 14px;
-    // z-index: 10;
     left: 24px;
     top: 23px;
 }

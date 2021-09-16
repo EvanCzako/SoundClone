@@ -1,0 +1,67 @@
+#user-prof-white-background {
+    position: fixed;
+    display: block;
+    top: -46px;
+    left: 30px;
+    width: 100px;
+    width: 70%;
+    height: 100%;
+    background-color: white;
+    z-index: -1;
+}
+
+#user-prof-header {
+    position: absolute;
+    width: 70%;
+    height: 250px;
+    left: 30px;
+    background: rgb(255,117,0);
+    background: linear-gradient(143deg, rgba(255,117,0,1) 0%, rgba(242,136,136,1) 100%);
+}
+
+#prof-img {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    top: 20px;
+    left: 30px;  
+    font-size: 25px;
+    color: black;
+    border-radius: 100px;
+}
+
+#user-prof-username {
+    position: absolute;
+    left: 270px;
+    top: 60px;
+    font-size: 30px;
+}
+
+#user-prof-main-content ul {
+    position: absolute;
+    top: 335px;
+}
+
+#profile-image-file-upload-label {
+    position: absolute;
+    left: 80px;
+    top: 170px;
+    padding: 3px;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: rgb(212, 212, 212);
+}
+
+#user-tracks-header {
+    position: absolute;
+    left: 60px;
+    top: 330px;
+    color: rgb(131, 131, 131);
+    font-size: 20px;
+    z-index: 1;
+}
+
+#user-tracklist-main-content {
+    position: absolute;
+    left: 40px;
+}

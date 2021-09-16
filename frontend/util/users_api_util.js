@@ -11,3 +11,10 @@ export const fetchUserByEmail = (email) => (
         method: 'GET'
     })
 );
+
+export const fetchUserById = (id) => (
+    $.ajax({
+        url: `/api/users/get_by_id?id=${id}`,
+        method: 'GET'
+    })
+);

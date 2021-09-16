@@ -9,23 +9,18 @@ import TrackList from "./track_list";
 import UploadForm from "./upload_form";
 import EditTrackForm from "./edit_form";
 import AudioBar from "./audio_bar";
+import UserProfile from "./user_profile";
 
 const App = (props) => (
     <div>
         <Modal />
         <header>
             <div id="top-nav-left-links">
-                <Link to="/" className="header-link">
+                <Link to="/stream">
                     <h1>SoundClone</h1>
-                </Link>
-                <Link to="/">
-                    <h1>Home</h1>
                 </Link>
                 <Link to="/stream">
                     <h1>Stream</h1>
-                </Link>
-                <Link to="/">
-                    <h1>Library</h1>
                 </Link>
             </div>
             <SearchBar />
@@ -37,6 +32,7 @@ const App = (props) => (
             </Route>
             <Route exact path="/tracks/:trackId/edit" component={EditTrackForm} />
             <Route exact path="/stream" component={TrackList} />
+            <Route exact path="/users/:userId" component={UserProfile}></Route>
         </Switch>
         <AudioBar />
     </div>
