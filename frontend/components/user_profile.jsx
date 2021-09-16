@@ -42,8 +42,7 @@ class UserProfile extends React.Component {
             contentType: false,
             processData: false
         }).then(
-            (response) => this.updateStateAndStore(),
-            (response) => console.log("ERROR")
+            (response) => this.updateStateAndStore()
         );
     }
 

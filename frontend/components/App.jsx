@@ -30,6 +30,9 @@ const App = (props) => (
             <Route exact path="/upload">
                 {!!props.state.session.id ?  <UploadForm /> : <Redirect to="/" />}
             </Route>
+            <Route exact path="/">
+                {<Redirect to="/stream" />}
+            </Route>
             <Route exact path="/tracks/:trackId/edit" component={EditTrackForm} />
             <Route exact path="/stream" component={TrackList} />
             <Route exact path="/users/:userId" component={UserProfile}></Route>

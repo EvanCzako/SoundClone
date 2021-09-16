@@ -14,11 +14,50 @@ u1 = User.create!(
    password: '1234567',
    email: 'demouser@gmail.com',   
 )
+u1.profile_photo.attach(io: File.open("/Users/evanczako/Documents/App Academy/FullStack Project/Files for seeding/demo_user_prof_pic.jpeg"), filename: "demo_user_prof_pic.jpeg");
 
-# t1 =  Track.create!(
-#    uploader: u1,
-#    uploader_id: u1.id,
-#    title: "SOUNDOFTHECITY",
-#    description: "Toph and Dough at it againnnnn",
-# );
-# t1.song.attach(io: File.open("/Users/evanczako/Desktop/SOUNDOFTHECITY.wav"), filename: "SOUNDOFTHECITY.wav");
+u2 = User.create!(
+   username: 'Doughy',
+   password: '7654321',
+   email: 'doughy@gmail.com',   
+)
+u2.profile_photo.attach(io: File.open("/Users/evanczako/Documents/App Academy/FullStack Project/Files for seeding/dough_boi_prof_pic.png"), filename: "dough_boi_prof_pic.png");
+
+
+t1 =  Track.create!(
+   uploader: u2,
+   uploader_id: u2.id,
+   title: "SOUNDOFTHECITY",
+   description: "Toph and Dough at it againnnnn",
+);
+t1.song.attach(io: File.open("/Users/evanczako/Documents/App Academy/FullStack Project/Files for seeding/SOUNDOFTHECITY.wav"), filename: "SOUNDOFTHECITY.wav");
+t1.photo.attach(io: File.open("/Users/evanczako/Documents/App Academy/FullStack Project/Files for seeding/SSOM_cover.png"), filename: "SSOM_cover.png");
+
+
+t2 =  Track.create!(
+   uploader: u2,
+   uploader_id: u2.id,
+   title: "'99 Benz",
+   description: "Dough at it againnnnn",
+);
+t2.song.attach(io: File.open("/Users/evanczako/Documents/App Academy/FullStack Project/Files for seeding/'99 Benz.wav"), filename: "'99 Benz.wav");
+t2.photo.attach(io: File.open("/Users/evanczako/Documents/App Academy/FullStack Project/Files for seeding/SSOM_cover.png"), filename: "SSOM_cover.png");
+
+
+t3 =  Track.create!(
+   uploader: u2,
+   uploader_id: u2.id,
+   title: "Stalactite",
+   description: "2020 ish",
+);
+t3.song.attach(io: File.open("/Users/evanczako/Documents/App Academy/FullStack Project/Files for seeding/Stalactite.wav"), filename: "Stalactite.wav");
+t3.photo.attach(io: File.open("/Users/evanczako/Documents/App Academy/FullStack Project/Files for seeding/TPWN_cover.png"), filename: "TPWN_cover.png");
+
+t4 =  Track.create!(
+   uploader: u2,
+   uploader_id: u2.id,
+   title: "Trappin In SoNo",
+   description: "2020 ish",
+);
+t4.song.attach(io: File.open("/Users/evanczako/Documents/App Academy/FullStack Project/Files for seeding/Trappin In SoNo.wav"), filename: "Trappin In SoNo.wav");
+t4.photo.attach(io: File.open("/Users/evanczako/Documents/App Academy/FullStack Project/Files for seeding/TPWN_cover.png"), filename: "TPWN_cover.png");
