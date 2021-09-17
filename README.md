@@ -10,6 +10,8 @@ SoundClone is a music sharing/streaming app that allows users to create public p
 
 - Link to live site: https://soundclone-1.herokuapp.com/#/
 
+------------------------
+
 ## Technologies used:
  - React/Redux
  - Ruby on Rails
