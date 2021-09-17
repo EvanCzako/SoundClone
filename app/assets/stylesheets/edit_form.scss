@@ -1,0 +1,73 @@
+#edit-white-background {
+    position: fixed;
+    display: block;
+    top: -46px;
+    left: 30px;
+    width: 100px;
+    width: 70%;
+    height: 100%;
+    background-color: white;
+    z-index: -1;
+}
+
+#edit-track-info {
+    position: relative;
+    left: 45px;
+    top: 30px;
+}
+
+#track-updated-message {
+    color: rgb(96, 212, 101);
+    font-size: 20px;
+}
+
+#edit-track-title {
+    left: 30px;
+    top: 0px;
+    padding-bottom: 20px;
+    color: gray;
+    font-size: 20px;
+}
+
+#edit-form {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+#edit-title-field {
+    background-color: rgb(255, 136, 0);
+    border-style: none;
+    border-radius: 3px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    height: 40px;
+    font-size: 30px;
+}
+
+#edit-title-field:focus{
+    outline-width: 0;
+}
+
+
+#edit-description-field {
+    background-color: rgb(255, 123, 0);
+    border-style: none;
+    border-radius: 3px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    height: 40px;
+    font-size: 30px;
+}
+
+#edit-description-field:focus{
+    outline-width: 0;
+}
+
+#edit-track-button {
+    width: 120px;
+    height: 50px;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    margin-bottom: 20px;
+}

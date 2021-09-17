@@ -10,6 +10,7 @@ import UploadForm from "./upload_form";
 import EditTrackForm from "./edit_form";
 import AudioBar from "./audio_bar";
 import UserProfile from "./user_profile";
+import ShowTrack from "./show_track";
 
 const App = (props) => (
     <div>
@@ -17,6 +18,7 @@ const App = (props) => (
         <header>
             <div id="top-nav-left-links">
                 <Link to="/stream">
+                    <img id="logo" src={window.brentURL} />
                     <h1>SoundClone</h1>
                 </Link>
                 <Link to="/stream">
@@ -34,6 +36,7 @@ const App = (props) => (
                 {<Redirect to="/stream" />}
             </Route>
             <Route exact path="/tracks/:trackId/edit" component={EditTrackForm} />
+            <Route exact path="/tracks/:trackId" component={ShowTrack} />
             <Route exact path="/stream" component={TrackList} />
             <Route exact path="/users/:userId" component={UserProfile}></Route>
         </Switch>

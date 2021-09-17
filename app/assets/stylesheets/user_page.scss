@@ -30,6 +30,18 @@
     border-radius: 100px;
 }
 
+#prof-img-empty {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    top: 20px;
+    left: 30px;  
+    font-size: 25px;
+    border: 1px black solid;
+    color: black;
+    border-radius: 100px;
+}
+
 #user-prof-username {
     position: absolute;
     left: 270px;

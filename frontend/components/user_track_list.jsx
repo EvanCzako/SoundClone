@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchTrack, deleteTrack } from '../actions/track_actions';
+import { fetchTrackById, deleteTrack } from '../actions/track_actions';
 import Music from './music';
 
 class UserTrackList extends React.Component {
@@ -12,13 +12,13 @@ class UserTrackList extends React.Component {
 
     componentDidMount() {
         for (let i = 0; i < this.props.userTracks.length; i++) {
-            this.props.fetchTrack(this.props.userTracks[i].id);
+            this.props.fetchTrackById(this.props.userTracks[i].id);
         }
     }
 
     loadUserTracks() {
         for (let i = 0; i < this.props.userTracks.length; i++) {
-            this.props.fetchTrack(this.props.userTracks[i].id);
+            this.props.fetchTrackById(this.props.userTracks[i].id);
         }
     }
 
@@ -49,7 +49,7 @@ class UserTrackList extends React.Component {
                     </div>
 
                 } else {
-                    this.props.fetchTrack(userTrack.id);
+                    this.props.fetchTrackById(userTrack.id);
                     return null;
                 }
 
@@ -80,7 +80,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchTrack: (trackId) => dispatch(fetchTrack(trackId)),
+        fetchTrackById: (trackId) => dispatch(fetchTrackById(trackId)),
         deleteTrack: (trackId) => dispatch(deleteTrack(trackId))
     };
 };
