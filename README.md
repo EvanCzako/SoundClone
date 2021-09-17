@@ -1,3 +1,5 @@
 # SoundClone 
 
-![image](/Users/evanczako/Documents/App Academy/FullStack Project/EC FSP/soundclone/app/assets/images/SC.png)
+<center>
+  <img align="center" width="180" height="180" src="app/assets/images/SC.png">
+</center>
