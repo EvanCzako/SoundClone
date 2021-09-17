@@ -22,6 +22,7 @@ SoundClone is a music sharing/streaming app that allows users to create public p
 ------------------------
 
 ## Features:
+ - Users can navigate through the site while listening to music without interruption
  - Users can upload audio files alone with associated album artwork, update the title and description of their tracks, and delete tracks they have uploaded
  - Users have individual profile pages where they can upload a profile image and view all tracks that they have uploaded
  - Tracks have individual pages for displaying all comments and likes associated with the track
