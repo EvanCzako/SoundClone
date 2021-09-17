@@ -31,7 +31,7 @@ SoundClone is a music sharing/streaming app that allows users to create public p
 ------------------------
 
 ## Future work:
- - Implement likes and comments
+ - Implement user likes and comments
 
 ------------------------
 
