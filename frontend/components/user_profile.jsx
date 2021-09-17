@@ -64,7 +64,7 @@ class UserProfile extends React.Component {
         let profImage = null;
         if (this.props.pageUser.id != undefined && (`${this.props.pageUser.id}` === this.props.userId)){
             userTrackList = <UserTrackList userTracks={this.props.pageUser.uploaded_tracks} />
-            profImage = this.props.pageUser.profileImageUrl ? <img id="prof-img" src={this.props.pageUser.profileImageUrl} /> : <div id="prof-img">ImgHere</div>;
+            profImage = this.props.pageUser.profileImageUrl ? <img id="prof-img" src={this.props.pageUser.profileImageUrl} /> : <div id="prof-img-empty"></div>;
         }
 
         let uploadImageLabel = null;

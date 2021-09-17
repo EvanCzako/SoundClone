@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { updateTrack, fetchTrack } from '../util/tracks_api_util';
+import { fetchTrackById } from '../actions/track_actions';
 
 class EditTrackForm extends React.Component {
 
@@ -22,6 +23,7 @@ class EditTrackForm extends React.Component {
     }
 
     componentDidMount(){
+        this.props.fetchTrackById(this.props.trackId);
         fetchTrack(this.props.trackId)
             .then((track) => this.afterLoad(track));
     }
@@ -64,18 +66,27 @@ class EditTrackForm extends React.Component {
             );
         };
         let form = null;
-        if (!this.state.submitting) {
+        // console.log(this.props.tracks[this.props.trackId].uploader.id===this.props.session.id);
+        if (!this.state.submitting && (this.props.tracks[this.props.trackId].uploader.id === this.props.session.id)) {
             form = <form id="edit-form" onSubmit={this.handleSubmit}>
+                <label htmlFor="edit-title-field">Title</label>
                 <input id="edit-title-field" type="text" value={this.state.title} onChange={this.updateField('title')} placeholder="Title" />
+                <label htmlFor="edit-title-field">Description</label>
                 <input id="edit-description-field" type="text" value={this.state.description} onChange={this.updateField('description')} placeholder="Description" />
                 <input id="edit-track-button" type="submit" value="Edit track info" />
             </form>
+        }else{
+            return (
+                <div />
+            );
         }
 
         return (
-            <div>
+            <div id="edit-track-info">
+                <div id="edit-white-background"></div>
+                <h1 id="edit-track-title">Edit track information</h1>
                 {form}
-                {this.state.message}
+                <h1 id="track-updated-message">{this.state.message}</h1>
             </div>
         );
     }
@@ -83,14 +94,16 @@ class EditTrackForm extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        trackId: ownProps.match.params.trackId
+        trackId: ownProps.match.params.trackId,
+        session: state.session,
+        tracks: state.entities.tracks
     };
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchTrack: (trackId) => dispatch(fetchTrack(trackId))
-    };
+        fetchTrackById: (trackId) => dispatch(fetchTrackById(trackId))
+    }; 
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditTrackForm);
