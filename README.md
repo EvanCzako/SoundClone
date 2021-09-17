@@ -33,13 +33,17 @@ SoundClone is a music sharing/streaming app that allows users to create public p
 ## Future work
  - Implement likes and comments
 
+------------------------
+
+## How tracks are displayed
+
+```javascript
+
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchTrackById, deleteTrack } from '../actions/track_actions';
 import Music from './music';
-
-```javascript
 
 class ShowTrack extends React.Component {
 
