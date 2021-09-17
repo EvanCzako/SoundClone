@@ -5,3 +5,7 @@
 </center>
 
 ------------------------
+
+SoundClone is a music sharing/streaming app that allows users to create public profiles, listen to the music of other users, and upload their own tracks.
+
+- Link to live site: https://soundclone-1.herokuapp.com/#/
