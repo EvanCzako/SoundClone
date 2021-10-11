@@ -11,7 +11,7 @@ import EditTrackForm from "./edit_form";
 import AudioBar from "./audio_bar";
 import UserProfile from "./user_profile";
 import ShowTrack from "./show_track";
-
+  
 const App = (props) => (
     <div>
         <Modal />
