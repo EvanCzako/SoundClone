@@ -13,7 +13,7 @@ class Greeting extends React.Component {
 
     render(){
         const sessionLinks = () => (
-            <nav className="login-signup">
+            <nav id="top-nav-right-links" className="login-signup">
                 <button id="login-button" onClick={() => this.props.openModal('email')}>Sign in</button>
                 <button id="signup-button" onClick={() => this.props.openModal('email')}>Create account</button>
             </nav>
@@ -21,11 +21,11 @@ class Greeting extends React.Component {
 
         if (!!this.props.currentUser) {
             return (
-                <div id="top-nav-right-links">
+                <nav id="top-nav-right-links">
                     <Link to="/upload" id="upload-page-link-button">Upload</Link>
                     <Link to={`/users/${this.props.currentUser.id}`} id="current-user-profile-button">{this.props.currentUser.username}</Link>
                     <button onClick={this.props.logout} id="logout-button">Sign out</button>
-                </div>
+                </nav>
             );
         }
         else {
