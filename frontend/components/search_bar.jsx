@@ -1,16 +1,12 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 class SearchBar extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {searchText: ""};
-        this.handleSubmit = this.handleSubmit.bind(this);
         this.updateField = this.updateField.bind(this);
-    }
-
-    handleSubmit(e) {
-        e.preventDefault();
     }
 
     updateField = (field) => {
@@ -21,16 +17,21 @@ class SearchBar extends React.Component {
 
     render() {
         let errors = null;
-        let form = null;
-        form = <form onSubmit={this.handleSubmit}>
+        let searchForm = null;
+        searchForm = <div id="search-form">
             <input id="search-field" type="text" value={this.state.searchText} onChange={this.updateField('searchText')} placeholder="Search" />
-            {/* <input id="search-button" type="submit" value="Search!" /> */}
-        </form>
+            <button id="search-button" type="submit">
+                
+                    {/* <Link to={`./search/${this.state.searchText}`}> */}
+                    <Link to={`../search/${this.state.searchText}`}>
+                    <i id="search-button-img" className="fa fa-search"></i>
+                    </Link>
+                
+            </button>
+        </div>
 
         return (
-            <div>
-                <div id="search-form">{form}</div>
-            </div>
+            searchForm
         );
     }
 }

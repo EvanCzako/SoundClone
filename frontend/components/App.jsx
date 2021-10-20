@@ -11,34 +11,35 @@ import EditTrackForm from "./edit_form";
 import AudioBar from "./audio_bar";
 import UserProfile from "./user_profile";
 import ShowTrack from "./show_track";
-
+import SplashPage from "./splash_page";
+  
 const App = (props) => (
     <div>
         <Modal />
         <header>
             <div id="top-nav-left-links">
-                <Link to="/stream">
-                    <img id="logo" src={window.brentURL} />
+                <Link to="/">
+                    <img id="logo" src={window.scLogoURL} />
                     <h1>SoundClone</h1>
                 </Link>
                 <Link to="/stream">
                     <h1>Stream</h1>
                 </Link>
+                <SearchBar />
+                <GreetingContainer />
             </div>
-            <SearchBar />
-            <GreetingContainer />
+            
         </header>
         <Switch>
             <Route exact path="/upload">
                 {!!props.state.session.id ?  <UploadForm /> : <Redirect to="/" />}
             </Route>
-            <Route exact path="/">
-                {<Redirect to="/stream" />}
-            </Route>
+            <Route exact path="/" component={SplashPage}/>
             <Route exact path="/tracks/:trackId/edit" component={EditTrackForm} />
             <Route exact path="/tracks/:trackId" component={ShowTrack} />
             <Route exact path="/stream" component={TrackList} />
             <Route exact path="/users/:userId" component={UserProfile}></Route>
+            <Route exact path="/search/:searchQueryString" component={TrackList}></Route>
         </Switch>
         <AudioBar />
     </div>

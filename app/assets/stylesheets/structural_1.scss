@@ -12,20 +12,24 @@ body {
 }
 
 #top-nav-left-links {
+    position: absolute;
     display: flex;
     height: 46px;
     background-color: rgb(61, 61, 61);
     align-items: center;
+    left: 60px;
+    width: 90%;
 }
 
 #top-nav-right-links {
+    position: relative;
     display: flex;
     height: 46px;
     background-color: rgb(61, 61, 61);
     align-items: center;
 }
 
-a h1 {
+#top-nav-left-links a h1 {
     color: rgb(224, 224, 224);
     padding-right: 20px;
     padding-left: 20px;
@@ -42,7 +46,7 @@ a {
     font-size: 14px;
 }
 
-a h1:hover {
+#top-nav-left-links a h1:hover {
     color: white;
 }
 
@@ -77,8 +81,17 @@ a h1:hover {
     cursor:pointer;
 }
 
+#search-form {
+    position: relative;
+    width: 100%;
+    height: 46px;
+}
+
 #search-field {
-    margin: 10px;
+    position: absolute;
+    width: 70%;
+    margin: 8px;
+    margin-left: 20px;
     height: 28px;
     border-radius: 3px;
     border-style: none;
@@ -89,8 +102,24 @@ a h1:hover {
 }
 
 #search-button {
-    margin: 10px;
+    position: absolute;
+    right: 23.5%;
+    width: 6%;
+    margin: 8px;
+    margin-left: 20px;
     height: 30px;
+    border-radius: 3px;
+    border-style: none;
+    background-color: rgb(255, 255, 255);
+}
+
+#search-button-img {
+    color: rgb(121, 121, 121);
+}
+
+#search-button-img:hover {
+    color: rgb(204, 204, 204);
+    cursor: pointer;
 }
 
 #logout-button {
