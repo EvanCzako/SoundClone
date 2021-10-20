@@ -19,10 +19,8 @@ class SearchBar extends React.Component {
         let errors = null;
         let searchForm = null;
         searchForm = <div id="search-form">
-            <input id="search-field" type="text" value={this.state.searchText} onChange={this.updateField('searchText')} placeholder="Search" />
+            <input id="search-field" type="text" autoComplete="off" value={this.state.searchText} onChange={this.updateField('searchText')} placeholder="Search" />
             <button id="search-button" type="submit">
-                
-                    {/* <Link to={`./search/${this.state.searchText}`}> */}
                     <Link to={`../search/${this.state.searchText}`}>
                     <i id="search-button-img" className="fa fa-search"></i>
                     </Link>

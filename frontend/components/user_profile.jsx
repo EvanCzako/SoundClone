@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchTrack } from '../actions/track_actions';
 import { fetchUserById } from '../actions/user_actions';
 import UserTrackList from './user_track_list';
 
@@ -103,7 +102,6 @@ const mapStateToProps = (state,ownProps) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchTrack: (trackId) => dispatch(fetchTrack(trackId)),
         fetchUserById: (id) => dispatch(fetchUserById(id))
     };
 };

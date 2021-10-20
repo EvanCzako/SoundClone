@@ -9,7 +9,11 @@ Rails.application.routes.draw do
       end
     end
     
-    resources :tracks, only: [:index, :show, :create, :update, :destroy]
+    resources :tracks, only: [:index, :show, :create, :update, :destroy] do
+      collection do
+        get 'get_by_string'
+      end
+    end
 
     resource :session, only: [:new, :create, :destroy]
   end

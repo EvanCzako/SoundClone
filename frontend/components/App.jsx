@@ -12,6 +12,7 @@ import AudioBar from "./audio_bar";
 import UserProfile from "./user_profile";
 import ShowTrack from "./show_track";
 import SplashPage from "./splash_page";
+import SearchShowPage from "./search_show_page";
   
 const App = (props) => (
     <div>
@@ -39,7 +40,7 @@ const App = (props) => (
             <Route exact path="/tracks/:trackId" component={ShowTrack} />
             <Route exact path="/stream" component={TrackList} />
             <Route exact path="/users/:userId" component={UserProfile}></Route>
-            <Route exact path="/search/:searchQueryString" component={TrackList}></Route>
+            <Route exact path="/search/:searchString" component={SearchShowPage}></Route>
         </Switch>
         <AudioBar />
     </div>

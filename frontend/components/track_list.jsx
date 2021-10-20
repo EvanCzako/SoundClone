@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchTracks, fetchTrack, deleteTrack } from '../actions/track_actions';
+import { fetchTracks, deleteTrack } from '../actions/track_actions';
 import Music from './music';
 
 class TrackList extends React.Component {
@@ -60,7 +60,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         fetchTracks: () => dispatch(fetchTracks()),
-        fetchTrack: (trackId) => dispatch(fetchTrack(trackId)),
         deleteTrack: (trackId) => dispatch(deleteTrack(trackId))
     };
 };

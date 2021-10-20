@@ -42,7 +42,6 @@ class Api::UsersController < ApplicationController
       render :show
     else
       render json: ["User id doesn't exist"], status: 420
-      # render json: ["Nope"]
     end
   end
 
