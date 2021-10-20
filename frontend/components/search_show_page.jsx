@@ -7,7 +7,6 @@ class SearchShowPage extends React.Component {
 
     constructor(props) {
         super(props);
-        // this.updateSearch = this.updateSearch.bind(this);
         this.state = {
             searchString: this.props.searchString
         };
@@ -23,7 +22,6 @@ class SearchShowPage extends React.Component {
             this.props.fetchTracksByString(this.props.searchString);
         }
     }
-
 
     render() {
 
