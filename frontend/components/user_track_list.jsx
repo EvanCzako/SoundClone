@@ -16,12 +16,6 @@ class UserTrackList extends React.Component {
         }
     }
 
-    loadUserTracks() {
-        for (let i = 0; i < this.props.userTracks.length; i++) {
-            this.props.fetchTrackById(this.props.userTracks[i].id);
-        }
-    }
-
     render() {
 
         let userPageTracks = null;
@@ -49,7 +43,7 @@ class UserTrackList extends React.Component {
                     </div>
 
                 } else {
-                    this.props.fetchTrackById(userTrack.id);
+                    // this.props.fetchTrackById(userTrack.id);
                     return null;
                 }
 

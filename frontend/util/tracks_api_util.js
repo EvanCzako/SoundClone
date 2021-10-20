@@ -36,3 +36,10 @@ export const deleteTrack = (trackId) => (
         method: 'DELETE'
     })
 );
+
+export const getTracksByString = (searchString) => (
+    $.ajax({
+        url: `/api/tracks/get_by_string?searchString=${searchString}`,
+        method: 'GET'
+    })
+);

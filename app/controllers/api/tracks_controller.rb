@@ -38,6 +38,11 @@ class Api::TracksController < ApplicationController
     render json: {message: "Track deleted!"}
   end
 
+  def get_by_string
+    @tracks = Track.where("LOWER(title) LIKE '%#{params[:searchString].downcase}%'")
+    render :index
+  end
+
   private
   
   def track_params

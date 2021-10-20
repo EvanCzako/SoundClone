@@ -58,7 +58,7 @@ a {
     width: 130px;
     border-radius: 3px;
     margin: 10px;
-    cursor:pointer;
+    cursor: pointer;
     font-size: 15px;
 }
 
@@ -78,7 +78,7 @@ a {
 
 #login-button:hover {
     border-color:rgb(156, 156, 156);
-    cursor:pointer;
+    cursor: pointer;
 }
 
 #search-form {
@@ -99,18 +99,25 @@ a {
 
 #search-field:focus {
     outline: none;
+    background-color: white;
 }
 
 #search-button {
     position: absolute;
     right: 23.5%;
-    width: 6%;
+    width: 4%;
     margin: 8px;
     margin-left: 20px;
     height: 30px;
     border-radius: 3px;
     border-style: none;
     background-color: rgb(255, 255, 255);
+}
+
+#search-button a {
+    // position: absolute;
+    width: 100%;
+    // height: 100%;
 }
 
 #search-button-img {
@@ -138,7 +145,7 @@ a {
 
 #logout-button:hover {
     border-color:rgb(156, 156, 156);
-    cursor:pointer;
+    cursor: pointer;
 }
 
 #upload-page-link-button {
@@ -152,7 +159,7 @@ a {
 
 #upload-page-link-button:hover {
     color: white;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 #current-user-profile-button {
@@ -166,7 +173,7 @@ a {
 
 #current-user-profile-button:hover {
     color: white;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 #audio-bar-div {
@@ -175,7 +182,7 @@ a {
     left: 0;
     width: 100%;
     height: 50px;
-    border:none;
+    border: none;
     z-index: 11;
 }
 
@@ -185,9 +192,8 @@ a {
     left: 0;
     width: 100%;
     height: 50px;
-    border:none;
+    border: none;
     z-index: 11;
-    // pointer-events: none;
 }
 
 #logo {
