@@ -41,6 +41,9 @@ const App = (props) => (
             <Route exact path="/stream" component={TrackList} />
             <Route exact path="/users/:userId" component={UserProfile}></Route>
             <Route exact path="/search/:searchString" component={SearchShowPage}></Route>
+            <Route exact path="/search">
+                <Redirect to="/" />
+            </Route>
         </Switch>
         <AudioBar />
     </div>

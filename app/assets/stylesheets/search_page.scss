@@ -1,0 +1,15 @@
+#search-results-wrapper h1 {
+    position: absolute;
+    left: 60px;
+    top: 86px;
+    height: 100%;
+    width: 70%;
+    color: rgb(131, 131, 131);
+    font-size: 20px;
+    z-index: 1;
+}
+
+#search-results-wrapper #user-tracklist-main-content {
+    position: absolute;
+    top: 160px;
+}
