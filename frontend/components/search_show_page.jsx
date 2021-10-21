@@ -31,7 +31,12 @@ class SearchShowPage extends React.Component {
             tracklist = <SearchTrackList searchTracks={Object.values(this.props.tracks)} />;
         }
         return (
-            tracklist
+            <div id="search-results-wrapper">
+                <div id="user-prof-white-background"></div>
+                <h1>Search results:</h1>
+                {tracklist}
+            </div>
+            
         );
     }
 
