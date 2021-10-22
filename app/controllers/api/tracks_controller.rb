@@ -11,7 +11,6 @@ class Api::TracksController < ApplicationController
   end
 
   def create
-    puts track_params
     @track = Track.new(track_params)
     @track.uploader = current_user
     @track.uploader_id = current_user.id
@@ -23,12 +22,12 @@ class Api::TracksController < ApplicationController
   end
 
   def update
-    puts params
+    puts track_params
     @track = Track.find_by(id: params[:id])
     if @track.update(track_params)
       render json: {message: "Track info updated!"}
     else
-      render json: @event.errors.full_messages, status: 422
+      render json: @track.errors.full_messages, status: 422
     end
   end
 

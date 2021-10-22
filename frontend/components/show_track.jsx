@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchTrackById, deleteTrack } from '../actions/track_actions';
 import Music from './music';
+import CommentForm from './comment_form';
+import CommentList from './comment_list';
 
 class ShowTrack extends React.Component {
 
@@ -15,8 +17,9 @@ class ShowTrack extends React.Component {
     }
 
     render() {
-
         let trackDisplay = null;
+        let commentList = null;
+        let commentForm = null;
         if(this.props.tracks[this.props.trackId] != undefined){
             let track = this.props.tracks[this.props.trackId];
             let editButton = null;
@@ -33,6 +36,8 @@ class ShowTrack extends React.Component {
                 {editButton}
                 {deleteButton}
             </li>
+            commentForm = <CommentForm track={track} trackId={this.props.trackId} />;
+            commentList = <CommentList track={track} trackComments={track.comments}/>;
         }
 
         return (
@@ -41,7 +46,11 @@ class ShowTrack extends React.Component {
                 <div id="main-tracklist">
                     {trackDisplay}
                 </div>
+                
+                {commentForm}
                 <h1 id="comments-title">Comments:</h1>
+                {commentList}
+                
             </div>
         );
     }
@@ -52,7 +61,8 @@ const mapStateToProps = (state,ownProps) => {
     return {
         trackId: ownProps.match.params.trackId,
         session: state.session,
-        tracks: state.entities.tracks
+        tracks: state.entities.tracks,
+        comments: state.entities.comments 
     };
 };
 

@@ -17,7 +17,6 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id]);
-    puts(user_params);
     if @user.update(user_params)
       render 'api/users/show'
     else
@@ -27,8 +26,6 @@ class Api::UsersController < ApplicationController
 
   def get_by_email
     @user = User.where(email: params[:email]).first
-    puts "----------------"
-    puts @user
     if @user
       render :show
     else
