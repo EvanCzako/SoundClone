@@ -11,8 +11,97 @@
 }
 
 h1#comments-title {
-    position: relative;
-    top: 300px;
-    left: 60px;
+    position: absolute;
+    top: 370px;
+    left: 10px;
     font-size: 20px;
+    height: 30px;
+}
+
+#comment-form-error {
+    position: absolute;
+    top: 290px;
+    z-index: 5;
+    color: red;
+}
+
+#comment-form {
+    position: absolute;
+    top: 310px;
+    z-index: 5;
+    left: 10px;
+}
+
+#comment-field{
+    width: 500px;
+    height: 25px;
+    border-style: solid;
+    border-color: rgb(255, 87, 0);
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif;
+}
+
+#comment-field:focus{
+    outline: none;
+}
+
+#submit-comment-button {
+    border: none;
+    font-family: 'Lato', sans-serif;
+    background: none;
+    color: black;
+}
+
+#submit-comment-button:hover {
+    color: rgb(255, 87, 0);
+    cursor: pointer;
+}
+
+.delete-comment-button {
+    border: none;
+    font-family: 'Lato', sans-serif;
+    background: none;
+    color: black;
+}
+
+.delete-comment-button:hover {
+    color: rgb(255, 87, 0);
+    cursor: pointer;
+}
+
+#comment-list-wrapper {
+    position: absolute;
+    top: 400px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#comment-list-wrapper > div {
+    position: relative;
+    border-top: 1px solid grey;
+    margin: 10px;
+    height: 90%;
+    width: 90%;
+}
+
+#comment-list-wrapper div div {
+    margin: 5px;
+}
+
+#comment-list-wrapper div a {
+    margin: 5px;
+    border: none;
+    font-family: 'Lato', sans-serif;
+    background: none;
+    color: black;
+}
+
+#comment-list-wrapper div a:hover {
+    color: rgb(255, 87, 0);
+    cursor: pointer;
+}
+
+#space-for-audio-bar {
+    height: 500px;
 }

@@ -60,7 +60,6 @@ class ShowTrack extends React.Component {
 
         let trackDisplay = null;
         if(this.props.tracks[this.props.trackId] != undefined){
-            console.log("hi");
             let track = this.props.tracks[this.props.trackId];
             let editButton = null;
             let deleteButton = null;

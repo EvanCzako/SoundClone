@@ -6,7 +6,6 @@ class Music extends React.Component {
     constructor(props) {
         super(props);
         this.togglePlay = this.togglePlay.bind(this);
-        this.effectAudio = this.effectAudio.bind(this);
     }
 
     togglePlay() {
@@ -17,25 +16,14 @@ class Music extends React.Component {
             if (audioBar.paused) {
                 audioBar.play();
             } else {
-                console.log("PAUSE");
                 audioBar.pause();
             }
         }
-        // console.log(audioBar.networkState);
-    }
-
-    effectAudio() {
-        let audioBar = document.getElementById("audio-bar");
-        console.log(audioBar.networkState);
-
-
     }
 
     render() {
-        // this.effectAudio();
         let playButton;
         let audioBar = document.getElementById("audio-bar");
-        // console.log(!audioBar.paused);
         if (this.props.track.id === this.props.currentTrack.id && !audioBar.paused){
             playButton = <button className="audio-button" onClick={this.togglePlay}>
                 <i className="fas fa-pause pause-icon"></i>

@@ -11,6 +11,11 @@ class User < ApplicationRecord
         foreign_key: :uploader_id,
         class_name: :Track
 
+    has_many :posted_comments,
+        primary_key: :id,
+        foreign_key: :author_id,
+        class_name: :Comment
+
     has_one_attached :profile_photo
 
     def self.find_by_credentials(email, password)

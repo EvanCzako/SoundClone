@@ -47,7 +47,6 @@ class EditTrackForm extends React.Component {
             .then((response) => this.handleResponse(response.message, true),
                 (response) => this.handleResponse(response.responseJSON, false));
         this.setState({ ['message']: 'Attempting to update info now' });
-
     }
 
     handleResponse(response, success) {
@@ -66,7 +65,6 @@ class EditTrackForm extends React.Component {
             );
         };
         let form = null;
-        // console.log(this.props.tracks[this.props.trackId].uploader.id===this.props.session.id);
         if (!this.state.submitting && (this.props.tracks[this.props.trackId].uploader.id === this.props.session.id)) {
             form = <form id="edit-form" onSubmit={this.handleSubmit}>
                 <label htmlFor="edit-title-field">Title</label>
