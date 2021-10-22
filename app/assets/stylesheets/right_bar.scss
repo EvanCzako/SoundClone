@@ -1,0 +1,47 @@
+#right-bar {
+    position: fixed;
+    display: block;
+    top: 46px;
+    right: 0px;
+    width: 30%;
+    height: 100%;
+    z-index: -33;
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-links {
+    position: relative;
+    margin: 20px;
+    font-size: 30px;
+    color: black;
+}
+
+.portfolio-links:hover {
+    color: rgb(255, 87, 0);
+    cursor: pointer;
+}
+
+#right-bar h2 {
+    position: relative;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#portfolio-wrapper {
+    border: 1px solid rgb(255, 87, 0);
+    border-radius: 5px;
+    margin-left: 40px;
+    margin-right: 10px;
+    margin-top: 10px;
+    background-color: white;
+}
+
+#connect-wrapper {
+    border: 1px solid rgb(255, 87, 0);
+    border-radius: 5px;
+    margin-left: 40px;
+    margin-right: 10px;
+    margin-top: 10px;
+    background-color: white;
+}

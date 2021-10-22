@@ -5,6 +5,7 @@ import { fetchTrackById, deleteTrack } from '../actions/track_actions';
 import Music from './music';
 import CommentForm from './comment_form';
 import CommentList from './comment_list';
+import RightBar from './right_bar';
 
 class ShowTrack extends React.Component {
 
@@ -36,13 +37,16 @@ class ShowTrack extends React.Component {
                 {editButton}
                 {deleteButton}
             </li>
-            commentForm = <CommentForm track={track} trackId={this.props.trackId} />;
+            if (this.props.session.id) {
+                commentForm = <CommentForm track={track} trackId={this.props.trackId} />;
+            }
             commentList = <CommentList track={track} trackComments={track.comments}/>;
         }
 
         return (
             <div id="tracklist-main-content">
                 <div id="track-page-white-background"></div>
+                <RightBar/>
                 <div id="main-tracklist">
                     {trackDisplay}
                 </div>
