@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchTracks, deleteTrack } from '../actions/track_actions';
 import Music from './music';
+import RightBar from './right_bar';
 
 class TrackList extends React.Component {
 
@@ -37,6 +38,7 @@ class TrackList extends React.Component {
 
         return (
             <div id="tracklist-main-content">
+                <RightBar/>
                 <h1>Hear the latest posts from the SoundClone community:</h1>
                 <div id="stream-white-background"></div>
                 <div id="main-tracklist">

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchUserById } from '../actions/user_actions';
 import UserTrackList from './user_track_list';
+import RightBar from './right_bar';
 
 class UserProfile extends React.Component {
 
@@ -77,6 +78,7 @@ class UserProfile extends React.Component {
         return (
             <div id="user-prof-main-content">
                 <div id="user-prof-white-background"></div>
+                <RightBar/>
                 <div id="user-prof-header">
                     <h1 id="user-prof-username">{this.props.pageUser.username}</h1>
                     {profImage}

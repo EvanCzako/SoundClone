@@ -59,7 +59,7 @@ class CommentForm extends React.Component {
             <div id="comment-form-wrapper">
                 {errors}
                 <form id="comment-form" onSubmit={this.handleSubmit}>
-                    <input id="comment-field" type="text" value={this.state.body} onChange={this.updateField('body')} placeholder="Leave a comment" />
+                    <input id="comment-field" type="text" value={this.state.body} onChange={this.updateField('body')} autoComplete="off" placeholder="Leave a comment" />
                     <input id="submit-comment-button" type="submit" value="Post comment" />
                 </form>
             </div>

@@ -23,7 +23,7 @@ class CommentList extends React.Component {
             if(this.props.comments[comment.id] != undefined){
                 let deleteCommentButton = null;
                 if (comment.author_id === this.props.session.id){
-                    deleteCommentButton = <button class="delete-comment-button" onClick={() => this.props.deleteComment(comment.id)}>Delete comment</button>
+                    deleteCommentButton = <button className="delete-comment-button" onClick={() => this.props.deleteComment(comment.id)}>Delete comment</button>
                 }
                 return (<div key={comment.id}>
                     <Link to={`/users/${comment.author_id}`}>{this.props.comments[comment.id].author.username}</Link>
