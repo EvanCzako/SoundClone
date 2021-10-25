@@ -42,11 +42,9 @@ class LikeSection extends React.Component {
     render() {
         let likeButton = null;
         if(this.props.session.id){
-            console.log(this.props.likes);
             likeButton = <button id="like-button" onClick={this.handleLike}>Like</button>
             for (let i = 0; i < this.props.track.likes.length; i++) {
                 if(this.props.track.likes[i].liker_id === this.props.session.id){
-                    console.log(this.props.track.likes[i]);
                     likeButton = <button id="like-button" onClick={() => this.handleUnlike(this.props.track.likes[i].id)}>Unlike</button>
                 }
             }

@@ -13,7 +13,6 @@ class CommentList extends React.Component {
 
     componentDidMount() {
         for (let i = 0; i < this.props.trackComments.length; i++) {
-            console.log(this.props.track.comments[i].id);
             this.props.fetchComment(this.props.track.comments[i].id);
         }
     }
