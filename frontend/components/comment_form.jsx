@@ -27,7 +27,6 @@ class CommentForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log("comment");
         this.setState({author_id: this.props.session.id});
         createComment({
             body: this.state.body,
@@ -40,7 +39,6 @@ class CommentForm extends React.Component {
 
     handleResponse(response, success) {
         if (success) {
-            console.log(response);
             this.props.fetchComment(response.id);
             this.setState({body: ""});
             this.setState({errors: undefined});

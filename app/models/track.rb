@@ -16,4 +16,9 @@ class Track < ApplicationRecord
         foreign_key: :track_id,
         class_name: :Comment
         
+    has_many :likes,
+        primary_key: :id,
+        foreign_key: :track_id,
+        class_name: :Like
+
 end
