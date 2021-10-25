@@ -6,6 +6,7 @@ import Music from './music';
 import CommentForm from './comment_form';
 import CommentList from './comment_list';
 import RightBar from './right_bar';
+import LikeSection from './like_section';
 
 class ShowTrack extends React.Component {
 
@@ -21,6 +22,7 @@ class ShowTrack extends React.Component {
         let trackDisplay = null;
         let commentList = null;
         let commentForm = null;
+        let likeSection = null;
         if(this.props.tracks[this.props.trackId] != undefined){
             let track = this.props.tracks[this.props.trackId];
             let editButton = null;
@@ -39,8 +41,10 @@ class ShowTrack extends React.Component {
             </li>
             if (this.props.session.id) {
                 commentForm = <CommentForm track={track} trackId={this.props.trackId} />;
+   
             }
             commentList = <CommentList track={track} trackComments={track.comments}/>;
+            likeSection = <LikeSection track={track} likeCount={track.likes.length}/>
         }
 
         return (
@@ -50,7 +54,7 @@ class ShowTrack extends React.Component {
                 <div id="main-tracklist">
                     {trackDisplay}
                 </div>
-                
+                {likeSection}
                 {commentForm}
                 <h1 id="comments-title">Comments:</h1>
                 {commentList}
@@ -66,7 +70,8 @@ const mapStateToProps = (state,ownProps) => {
         trackId: ownProps.match.params.trackId,
         session: state.session,
         tracks: state.entities.tracks,
-        comments: state.entities.comments 
+        comments: state.entities.comments,
+        likes: state.entities.likes
     };
 };
 

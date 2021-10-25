@@ -17,9 +17,9 @@ Rails.application.routes.draw do
 
     resources :comments, only: [:index, :show, :create, :update, :destroy]
 
+    resources :likes, only: [:index, :show, :create, :destroy]
+
     resource :session, only: [:new, :create, :destroy]
   end
 
-  # get '/api/users/:email/emails', to: 'users#get_by_email', as: 'get_by_email'
-  
 end

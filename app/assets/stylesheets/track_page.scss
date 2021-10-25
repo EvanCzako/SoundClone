@@ -12,7 +12,7 @@
 
 h1#comments-title {
     position: absolute;
-    top: 370px;
+    top: 420px;
     left: 10px;
     font-size: 20px;
     height: 30px;
@@ -20,14 +20,15 @@ h1#comments-title {
 
 #comment-form-error {
     position: absolute;
-    top: 290px;
+    top: 340px;
     z-index: 5;
     color: red;
+    left: 10px;
 }
 
 #comment-form {
     position: absolute;
-    top: 310px;
+    top: 360px;
     z-index: 5;
     left: 10px;
 }
@@ -72,7 +73,7 @@ h1#comments-title {
 
 #comment-list-wrapper {
     position: absolute;
-    top: 400px;
+    top: 450px;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -105,4 +106,36 @@ h1#comments-title {
 
 #space-for-audio-bar {
     height: 500px;
+}
+
+#likes-count {
+    position: absolute;
+    top: 2px;
+    width: 70px;
+}
+
+#like-button {
+    border: 1px solid grey;
+    border-radius: 3px;
+    background: none;
+    font-family: 'Lato', sans-serif;
+    position: absolute;
+    left: 70px;
+}
+
+#like-button:hover {
+    cursor: pointer;
+    color: rgb(255, 87, 0);
+}
+
+#like-button:focus {
+    border: 1px solid grey;
+}
+
+#like-section-wrapper {
+    position: absolute;
+    top: 300px;
+    display: flex;
+    z-index: 6;
+    margin: 10px;
 }
