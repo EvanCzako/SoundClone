@@ -10,13 +10,12 @@ class SplashPage extends React.Component {
 
     render() {
 
-
         return (
             <div id="splash-page-container">
                 <div id="splash-img-border">
                     <img id="crowd-img" src={window.crowdURL} />
                     <h1 id="welcome-text">Welcome to SoundClone</h1>
-                    <h1 id="welcome-sub-text">The Internet's most unpopular place to find new music.</h1>
+                    <h1 id="welcome-sub-text">The Internet's most mysterious place to find new music.</h1>
                 </div>
                 <div id="splash-white-background">
                     <h1 id="splash-stream-preface">Hear what's trending for free in the SoundClone community.</h1>

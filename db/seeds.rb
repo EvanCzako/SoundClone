@@ -28,11 +28,19 @@ u2 = User.create!(
 file2 = URI.open('https://soundclone-seeds.s3.amazonaws.com/dough_boi_prof_pic.png');
 u2.profile_photo.attach(io: file2, filename: "dough_boi_prof_pic.png");
 
+u3 = User.create!(
+   username: 'Toph',
+   password: '7654321',
+   email: 'toph@gmail.com',   
+)
+file11 = URI.open('https://soundclone-seeds.s3.amazonaws.com/toph_prof_pic.png');
+u3.profile_photo.attach(io: file11, filename: "toph_prof_pic.png");
+
 t1 =  Track.create!(
    uploader: u2,
    uploader_id: u2.id,
    title: "SOUNDOFTHECITY",
-   description: "Toph and Dough at it againnnnn",
+   description: "Toph and Dough at it again",
 );
 file3 = URI.open('https://soundclone-seeds.s3.amazonaws.com/SOUNDOFTHECITY.wav');
 t1.song.attach(io: file3, filename: "SOUNDOFTHECITY.wav");
@@ -56,7 +64,7 @@ t3 =  Track.create!(
    uploader: u2,
    uploader_id: u2.id,
    title: "Stalactite",
-   description: "2020 ish",
+   description: "Emo-rap inspired, 2020.",
 );
 file7 = URI.open("https://soundclone-seeds.s3.amazonaws.com/Stalactite.wav");
 t3.song.attach(io: file7, filename: "Stalactite.wav");
@@ -68,10 +76,32 @@ t4 =  Track.create!(
    uploader: u2,
    uploader_id: u2.id,
    title: "Trappin In SoNo",
-   description: "2020 ish",
+   description: "Shout out to Norwalk!",
 );
 file9 = URI.open("https://soundclone-seeds.s3.amazonaws.com/Trappin+In+SoNo.wav");
 t4.song.attach(io: file9, filename: "Trappin In SoNo.wav");
 file10 = URI.open('https://soundclone-seeds.s3.amazonaws.com/TPWN_cover.png');
 t4.photo.attach(io: file10, filename: "TPWN_cover.png");
+
+t5 =  Track.create!(
+   uploader: u3,
+   uploader_id: u3.id,
+   title: "IDKU",
+   description: "Toph and Looseleaf team up for this RnB jam.",
+);
+file12 = URI.open("https://soundclone-seeds.s3.amazonaws.com/idku.mp3");
+t5.song.attach(io: file12, filename: "idku.mp3");
+file13 = URI.open('https://soundclone-seeds.s3.amazonaws.com/idku_cover.png');
+t5.photo.attach(io: file13, filename: "idku_cover.png");
+
+t6 =  Track.create!(
+   uploader: u3,
+   uploader_id: u3.id,
+   title: "Fransancisco",
+   description: "Toph and Lupo team up for this Cali anthem.",
+);
+file14 = URI.open("https://soundclone-seeds.s3.amazonaws.com/fransancisco.mp3");
+t6.song.attach(io: file14, filename: "fransancisco.mp3");
+file15 = URI.open('https://soundclone-seeds.s3.amazonaws.com/fransancisco_cover.png');
+t6.photo.attach(io: file15, filename: "fransancisco_cover.png");
 
