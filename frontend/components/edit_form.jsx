@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { updateTrack, fetchTrack } from '../util/tracks_api_util';
 import { fetchTrackById } from '../actions/track_actions';
+import { Redirect } from 'react-router-dom';
 
 class EditTrackForm extends React.Component {
 
@@ -14,7 +15,8 @@ class EditTrackForm extends React.Component {
             id: this.props.trackId,
             infoLoaded: false,
             submitting: false,
-            message: ""
+            message: "",
+            redirect: undefined
         }
         this.updateField = this.updateField.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -52,6 +54,7 @@ class EditTrackForm extends React.Component {
     handleResponse(response, success) {
         if (success) {
             this.setState({ ['message']: 'Track info updated!' });
+            this.setState({redirect: <Redirect to={`/tracks/${this.props.trackId}`} />});
         } else {
             this.setState({ ['message']: 'Track info not updated. Please try again.' });
         }
@@ -79,14 +82,21 @@ class EditTrackForm extends React.Component {
             );
         }
 
-        return (
-            <div id="edit-track-info">
-                <div id="edit-white-background"></div>
-                <h1 id="edit-track-title">Edit track information</h1>
-                {form}
-                <h1 id="track-updated-message">{this.state.message}</h1>
-            </div>
-        );
+        if(!this.state.redirect){
+            return (
+                <div id="edit-track-info">
+                    <div id="edit-white-background"></div>
+                    <h1 id="edit-track-title">Edit track information</h1>
+                    {form}
+                    <h1 id="track-updated-message">{this.state.message}</h1>
+                </div>
+            );
+        } else{
+            return(
+                this.state.redirect
+            );
+        }
+
     }
 }
 

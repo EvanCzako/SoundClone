@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createTrack } from '../util/tracks_api_util';
+import { Redirect } from 'react-router-dom';
 // --------------------------------------
 class UploadForm extends React.Component {
 
@@ -15,7 +16,8 @@ class UploadForm extends React.Component {
                 photoUrl: null,
                 submitting: false,
                 message: "",
-                errorMessage: ""
+                errorMessage: "",
+                redirect: undefined
             };
         this.updateField = this.updateField.bind(this);
         this.handleSongFile = this.handleSongFile.bind(this);
@@ -55,14 +57,16 @@ class UploadForm extends React.Component {
         formData.append('track[photo]', this.state.photoFile);
         this.setState({ ['submitting']: true });
         createTrack(formData)
-            .then((response) => this.handleResponse(response.message,true),
+            .then((response) => this.handleResponse(response,true),
                 (response) => this.handleResponse(response.responseJSON,false));
         this.setState({ ['message']: 'Attempting to upload now' });
     }
 
     handleResponse(response,success){
         if(success){
+            console.log(response);
             this.setState({ ['message']: 'Track successfully uploaded!' });
+            this.setState({ redirect: <Redirect to={`/tracks/${response.id}`} /> });
         } else{
             this.setState({ ['message']: 'Track did not upload. Please try again.' });
             this.setState({ ['errorMessage']: response });
@@ -92,13 +96,20 @@ class UploadForm extends React.Component {
             </form>
         }
 
-        return (
-            <div id="upload-form-info">
-                {form}
-                {this.state.message}
-                {this.state.errorMessage}
-            </div>
-        );
+        if(!this.state.redirect){
+            return (
+                <div id="upload-form-info">
+                    {form}
+                    {this.state.message}
+                    {this.state.errorMessage}
+                </div>
+            );
+        } else {
+            return (
+                this.state.redirect
+            );
+        }
+
     }
 }
 

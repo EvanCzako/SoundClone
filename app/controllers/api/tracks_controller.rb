@@ -15,7 +15,7 @@ class Api::TracksController < ApplicationController
     @track.uploader = current_user
     @track.uploader_id = current_user.id
     if @track.save
-      render json: {message: "Track saved!"}
+      render json: @track
     else
       render json: @track.errors.full_messages, status: 422
     end
