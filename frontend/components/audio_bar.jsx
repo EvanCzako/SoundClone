@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { receiveCurrentTrack } from '../actions/current_track_actions';
-import { fetchTrackById } from '../actions/track_actions';
+import { receiveCurrentTrack, fetchCurrentTrackById } from '../actions/current_track_actions';
 
 class AudioBar extends React.Component {
     constructor(props) {
@@ -29,7 +28,7 @@ class AudioBar extends React.Component {
         while (randomNum === this.props.currentTrack.id){
             randomNum = Math.floor(Math.random() * 6) + 1;
         } 
-        this.props.fetchTrackById(randomNum)
+        this.props.fetchCurrentTrackById(randomNum)
             .then((trackAction) => this.props.receiveCurrentTrack(trackAction.track));
     }
 
@@ -52,7 +51,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         receiveCurrentTrack: (track) => dispatch(receiveCurrentTrack(track)),
-        fetchTrackById: (trackId) => dispatch(fetchTrackById(trackId))
+        fetchCurrentTrackById: (trackId) => dispatch(fetchCurrentTrackById(trackId))
     };
 };
 
