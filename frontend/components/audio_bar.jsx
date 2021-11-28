@@ -1,14 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { receiveCurrentTrack } from '../actions/current_track_actions';
+import { fetchTrackById } from '../actions/track_actions';
 
 class AudioBar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { 'play': false };
+        this.state = { loading: false };
         this.handlePlay = this.handlePlay.bind(this);
         this.handlePause = this.handlePause.bind(this);
         this.handleLoaded = this.handleLoaded.bind(this);
+        this.handleEnded = this.handleEnded.bind(this);
     }
 
     handlePlay(){
@@ -22,10 +24,19 @@ class AudioBar extends React.Component {
     handleLoaded(){
     }
 
+    handleEnded(){
+        let randomNum = Math.floor(Math.random() * 6) + 1;
+        while (randomNum === this.props.currentTrack.id){
+            randomNum = Math.floor(Math.random() * 6) + 1;
+        } 
+        this.props.fetchTrackById(randomNum)
+            .then((trackAction) => this.props.receiveCurrentTrack(trackAction.track));
+    }
+
     render() {
         return (
             <div id="audio-bar-div">
-                <audio controls id="audio-bar" src={this.props.currentTrack.songUrl} autoPlay onPlay={this.handlePlay} onPause={this.handlePause} onCanPlay={this.handleLoaded}/>
+                <audio controls id="audio-bar" src={this.props.currentTrack.songUrl} autoPlay onPlay={this.handlePlay} onPause={this.handlePause} onCanPlay={this.handleLoaded} onEnded={this.handleEnded}/>
             </div>
         );
     }
@@ -33,13 +44,15 @@ class AudioBar extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        currentTrack: state.entities.currentTrack
+        currentTrack: state.entities.currentTrack,
+        tracks: state.entities.tracks
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        receiveCurrentTrack: (track) => dispatch(receiveCurrentTrack(track))
+        receiveCurrentTrack: (track) => dispatch(receiveCurrentTrack(track)),
+        fetchTrackById: (trackId) => dispatch(fetchTrackById(trackId))
     };
 };
 
